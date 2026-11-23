@@ -1,0 +1,2474 @@
+[
+  {
+    "id": 1,
+    "question": "Solution: You create a PowerShell script that runs the New-AzureADUser cmdlet for each user.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "The New-AzureADUser cmdlet creates a user object within Azure AD, even with -UserType Guest, but it does not send the necessary invitation to an external email address. For external users to become functional guest accounts, an invitation and redemption process is required. The New-AzureADMSInvitation cmdlet specifically handles sending invitations to external users, enabling them to accept and access the tenant.",
+    "topic": "Topic 1"
+  },
+  {
+    "id": 2,
+    "question": "Solution: From Azure AD in the Azure portal, you use the Bulk create user operation.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "The \"Bulk create user\" operation is used to add new member users directly to an Azure AD tenant, not external guest users. To create guest user accounts for external users in bulk from a CSV file, the \"Bulk invite users\" operation must be utilized.",
+    "topic": "Topic 1"
+  },
+  {
+    "id": 3,
+    "question": "Solution: You create a PowerShell script that runs the New-AzureADMSInvitation cmdlet for each external user.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "The New-AzureADMSInvitation cmdlet is the correct tool for inviting external users to an Azure AD tenant, which automatically creates a guest user account for each invited user. Utilizing this cmdlet in a PowerShell script to iterate through 500 external users from a CSV file directly accomplishes the goal of creating guest user accounts for all of them.",
+    "topic": "Topic 1"
+  },
+  {
+    "id": 5,
+    "question": "You have an Azure subscription that contains an Azure Active Directory (Azure AD) tenant named contoso.com and an Azure Kubernetes Service (AKS) cluster named AKS1.\nAn administrator reports that she is unable to grant access to AKS1 to the users in contoso.com.\nYou need to ensure that access to AKS1 can be granted to the contoso.com users.\nWhat should you do first?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "From contoso.com, modify the Organization relationships settings."
+      },
+      {
+        "id": "B",
+        "text": "From contoso.com, create an OAuth 2.0 authorization endpoint."
+      },
+      {
+        "id": "C",
+        "text": "Recreate AKS1."
+      },
+      {
+        "id": "D",
+        "text": "From AKS1, create a namespace."
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "explanation": null,
+    "topic": "Topic 2"
+  },
+  {
+    "id": 6,
+    "question": "You have a Microsoft 365 tenant and an Azure Active Directory (Azure AD) tenant named contoso.com.\nYou plan to grant three users named User1, User2, and User3 access to a temporary Microsoft SharePoint document library named Library1.\nYou need to create groups for the users. The solution must ensure that the groups are deleted automatically after 180 days.\nWhich two groups should you create? Each correct answer presents a complete solution.\nNOTE: Each correct selection is worth one point.",
+    "questionType": "multiple",
+    "options": [
+      {
+        "id": "A",
+        "text": "a Microsoft 365 group that uses the Assigned membership type"
+      },
+      {
+        "id": "B",
+        "text": "a Security group that uses the Assigned membership type"
+      },
+      {
+        "id": "C",
+        "text": "a Microsoft 365 group that uses the Dynamic User membership type"
+      },
+      {
+        "id": "D",
+        "text": "a Security group that uses the Dynamic User membership type"
+      },
+      {
+        "id": "E",
+        "text": "a Security group that uses the Dynamic Device membership type"
+      }
+    ],
+    "correctAnswers": [
+      "A",
+      "C"
+    ],
+    "explanation": "Microsoft 365 groups support expiration policies, allowing them to be automatically deleted after a specified period, along with their associated SharePoint sites. Azure AD security groups, by contrast, do not have an inherent expiration policy feature. Therefore, both Microsoft 365 groups with Assigned membership and those with Dynamic User membership fulfill the requirement for automatic deletion.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 12,
+    "question": "You recently created a new Azure subscription that contains a user named Admin1.\nAdmin1 attempts to deploy an Azure Marketplace resource by using an Azure Resource Manager template. Admin1 deploys the template by using Azure PowerShell and receives the following error message: User failed validation to purchase resources. Error message: Legal terms have not been accepted for this item on this subscription. To accept legal terms, please go to the Azure portal (http://go.microsoft.com/fwlink/?LinkId=534873) and configure programmatic deployment for the Marketplace item or create it there for the first time.`\nYou need to ensure that Admin1 can deploy the Marketplace resource successfully.\nWhat should you do?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "From Azure PowerShell, run the Set-AzApiManagementSubscription cmdlet"
+      },
+      {
+        "id": "B",
+        "text": "From the Azure portal, register the Microsoft.Marketplace resource provider"
+      },
+      {
+        "id": "C",
+        "text": "From Azure PowerShell, run the Set-AzMarketplaceTerms cmdlet"
+      },
+      {
+        "id": "D",
+        "text": "From the Azure portal, assign the Billing administrator role to Admin1"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "explanation": "The error message \"Legal terms have not been accepted\" explicitly states the root cause. Running `Set-AzMarketplaceTerms` with the `-Accept` parameter programmatically accepts the legal terms for the specified Azure Marketplace item. This action enables programmatic deployment of the resource, resolving the validation error encountered by Admin1.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 13,
+    "question": "You have an Azure Active Directory (Azure AD) tenant that contains 5,000 user accounts.\nYou create a new user account named AdminUser1.\nYou need to assign the User administrator administrative role to AdminUser1.\nWhat should you do from the user account properties?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "From the Licenses blade, assign a new license"
+      },
+      {
+        "id": "B",
+        "text": "From the Directory role blade, modify the directory role"
+      },
+      {
+        "id": "C",
+        "text": "From the Groups blade, invite the user account to a new group"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": null,
+    "topic": "Topic 2"
+  },
+  {
+    "id": 14,
+    "question": "You have an Azure Active Directory (Azure AD) tenant named contoso.onmicrosoft.com that contains 100 user accounts.\nYou purchase 10 Azure AD Premium P2 licenses for the tenant.\nYou need to ensure that 10 users can use all the Azure AD Premium features.\nWhat should you do?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "From the Licenses blade of Azure AD, assign a license"
+      },
+      {
+        "id": "B",
+        "text": "From the Groups blade of each user, invite the users to a group"
+      },
+      {
+        "id": "C",
+        "text": "From the Azure AD domain, add an enterprise application"
+      },
+      {
+        "id": "D",
+        "text": "From the Directory role blade of each user, modify the directory role"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "To enable Azure AD Premium P2 features for specific users, the purchased licenses must be directly assigned to those users. Option A describes this necessary action of assigning a license. While the specific administrative portal for license assignment has transitioned from the Azure AD Licenses blade to the Microsoft 365 Admin Center, the fundamental task remains assigning the licenses.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 15,
+    "question": "You have an Azure subscription named Subscription1 and an on-premises deployment of Microsoft System Center Service Manager.\nSubscription1 contains a virtual machine named VM1.\nYou need to ensure that an alert is set in Service Manager when the amount of available memory on VM1 is below 10 percent.\nWhat should you do first?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create an automation runbook"
+      },
+      {
+        "id": "B",
+        "text": "Deploy a function app"
+      },
+      {
+        "id": "C",
+        "text": "Deploy the IT Service Management Connector (ITSM)"
+      },
+      {
+        "id": "D",
+        "text": "Create a notification"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "explanation": "To integrate Azure alerts with an on-premises System Center Service Manager, the IT Service Management Connector (ITSM) is required. Deploying ITSMC establishes the necessary bi-directional communication channel between Azure monitoring services and your Service Manager deployment. This enables Azure alerts, such as the low memory alert for VM1, to be ingested and managed within Service Manager as work items. Therefore, deploying ITSMC is the crucial first step to bridge this communication.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 16,
+    "question": "You sign up for Azure Active Directory (Azure AD) Premium P2.\nYou need to add a user named admin1@contoso.com as an administrator on all the computers that will be joined to the Azure AD domain.\nWhat should you configure in Azure AD?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Device settings from the Devices blade"
+      },
+      {
+        "id": "B",
+        "text": "Providers from the MFA Server blade"
+      },
+      {
+        "id": "C",
+        "text": "User settings from the Users blade"
+      },
+      {
+        "id": "D",
+        "text": "General settings from the Groups blade"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "To add a user as an administrator on all Azure AD joined computers, configure the 'Additional local administrators on Azure AD joined devices' setting. This setting is accessed through the Devices blade in Azure AD, specifically within Device settings. This functionality requires an Azure AD Premium license, which is provided by Azure AD Premium P2 mentioned in the question.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 19,
+    "question": "You have an Azure subscription named Subscription1 that contains a virtual network named VNet1. VNet1 is in a resource group named RG1.\nSubscription1 has a user named User1. User1 has the following roles:\n• Reader\n• Security Admin\n• Security Reader You need to ensure that User1 can assign the Reader role for VNet1 to other users.\nWhat should you do?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Remove User1 from the Security Reader and Reader roles for Subscription1."
+      },
+      {
+        "id": "B",
+        "text": "Assign User1 the User Access Administrator role for VNet1."
+      },
+      {
+        "id": "C",
+        "text": "Assign User1 the Network Contributor role for VNet1."
+      },
+      {
+        "id": "D",
+        "text": "Assign User1 the Network Contributor role for RG1."
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "To enable User1 to assign roles, they need a role with `Microsoft.Authorization/roleAssignments/write` permission. The User Access Administrator role, when assigned at the VNet1 scope, grants the necessary permissions to manage user access and assign roles for that specific resource. Other roles like Reader, Security Admin, Security Reader, or Network Contributor do not provide the capability to assign roles to other users.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 20,
+    "question": "You have an Azure Active Directory (Azure AD) tenant named contosocloud.onmicrosoft.com.\nYour company has a public DNS zone for contoso.com.\nYou add contoso.com as a custom domain name to Azure AD.\nYou need to ensure that Azure can verify the domain name.\nWhich type of DNS record should you create?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "MX"
+      },
+      {
+        "id": "B",
+        "text": "NSEC"
+      },
+      {
+        "id": "C",
+        "text": "PTR"
+      },
+      {
+        "id": "D",
+        "text": "RRSIG"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "To verify ownership of a custom domain name in Azure AD, you must create a specific DNS record in the domain's public DNS zone. Microsoft documentation confirms that both TXT and MX records can be used for this domain verification process. Since TXT is not an available choice among the options, MX is the correct record type.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 21,
+    "question": "Solution: On Subscription1, you assign the DevTest Labs User role to the Developers group.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "Assigning the DevTest Labs User role is incorrect as this role is specifically for managing resources within Azure DevTest Labs environments, such as virtual machines. It does not provide the necessary permissions to create Azure Logic Apps. To create Logic Apps, the Developers group requires the Logic App Contributor role, assigned at the resource group or subscription level.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 22,
+    "question": "Solution: On Subscription1, you assign the Logic App Operator role to the Developers group.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "No, this solution does not meet the goal. The Logic App Operator role only grants permissions to read, enable, and disable logic apps. It does not include the necessary `Microsoft.Logic/workflows/write` permission required to create new Azure logic apps. To create logic apps, the Developers group would require the Logic App Contributor role or a broader role like Contributor at the resource group or subscription level.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 23,
+    "question": "Solution: On Dev, you assign the Contributor role to the Developers group.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "The Contributor role provides permissions to manage all resources within its assigned scope, including the ability to create new resources such as Azure Logic Apps. Assigning this role at the resource group level grants the Developers group the necessary permissions to provision Logic Apps within the Dev resource group, thereby meeting the goal.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 25,
+    "question": "You have an Azure subscription named Subscription1 that contains an Azure Log Analytics workspace named Workspace1.\nYou need to view the error events from a table named Event.\nWhich query should you run in Workspace1?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Get-Event Event | where {$_.EventType == \"error\"}"
+      },
+      {
+        "id": "B",
+        "text": "search in (Event) \"error\""
+      },
+      {
+        "id": "C",
+        "text": "select * from Event where EventType == \"error\""
+      },
+      {
+        "id": "D",
+        "text": "search in (Event) * | where EventType -eq \"error\""
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "Option B (`search in (Event) \"error\"`) is a valid Kusto Query Language (KQL) command. This query performs a full-text search across all columns within the `Event` table for any entry containing the string \"error\". This method effectively retrieves relevant error events from the specified table. Options A and C use incorrect syntax for Log Analytics (PowerShell and SQL, respectively), and option D contains KQL syntax errors with the comparison operator (`-eq` instead of `==`) and the `search` operator's usage.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 29,
+    "question": "You have an Azure subscription.\nUsers access the resources in the subscription from either home or from customer sites. From home, users must establish a point-to-site VPN to access the Azure resources. The users on the customer sites access the Azure resources by using site-to-site VPNs.\nYou have a line-of-business-app named App1 that runs on several Azure virtual machine. The virtual machines run Windows Server 2016.\nYou need to ensure that the connections to App1 are spread across all the virtual machines.\nWhat are two possible Azure services that you can use? Each correct answer presents a complete solution.\nNOTE: Each correct selection is worth one point.",
+    "questionType": "multiple",
+    "options": [
+      {
+        "id": "A",
+        "text": "an internal load balancer"
+      },
+      {
+        "id": "B",
+        "text": "a public load balancer"
+      },
+      {
+        "id": "C",
+        "text": "an Azure Content Delivery Network (CDN)"
+      },
+      {
+        "id": "D",
+        "text": "Traffic Manager"
+      },
+      {
+        "id": "E",
+        "text": "an Azure Application Gateway"
+      }
+    ],
+    "correctAnswers": [
+      "A",
+      "E"
+    ],
+    "explanation": "An internal load balancer (A) is suitable because users access resources exclusively through VPNs, requiring internal network load distribution without public exposure. Azure Application Gateway (E) provides Layer 7 (HTTP/S) load balancing, making it ideal for distributing connections to web applications running on virtual machines, which is a common pattern for line-of-business applications.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 30,
+    "question": "You have an Azure subscription.\nYou have 100 Azure virtual machines.\nYou need to quickly identify underutilized virtual machines that can have their service tier changed to a less expensive offering.\nWhich blade should you use?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Monitor"
+      },
+      {
+        "id": "B",
+        "text": "Advisor"
+      },
+      {
+        "id": "C",
+        "text": "Metrics"
+      },
+      {
+        "id": "D",
+        "text": "Customer insights"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "Azure Advisor provides personalized recommendations to optimize and reduce overall Azure spending. Specifically, its Cost category identifies underutilized virtual machines and recommends right-sizing or changing their service tier to a less expensive offering. This allows for quick identification of opportunities to improve cost efficiency.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 32,
+    "question": "You have an Azure Active Directory (Azure AD) tenant named contoso.onmicrosoft.com.\nThe User administrator role is assigned to a user named Admin1.\nAn external partner has a Microsoft account that uses the user1@outlook.com sign in.\nAdmin1 attempts to invite the external partner to sign in to the Azure AD tenant and receives the following error message: Unable to invite user user1@outlook.com - Generic authorization exception.\nYou need to ensure that Admin1 can invite the external partner to sign in to the Azure AD tenant.\nWhat should you do?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "From the Users settings blade, modify the External collaboration settings."
+      },
+      {
+        "id": "B",
+        "text": "From the Custom domain names blade, add a custom domain."
+      },
+      {
+        "id": "C",
+        "text": "From the Organizational relationships blade, add an identity provider."
+      },
+      {
+        "id": "D",
+        "text": "From the Roles and administrators blade, assign the Security administrator role to Admin1."
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "The `Generic authorization exception` indicates a tenant-wide policy is preventing the invitation. External collaboration settings in Azure AD define who can invite guest users and from which domains. Admin1, despite being a User Administrator, is subject to these organization-wide guest invitation policies. Modifying these settings will allow Admin1 to invite the external partner.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 33,
+    "question": "You have an Azure subscription linked to an Azure Active Directory tenant. The tenant includes a user account named User1.\nYou need to ensure that User1 can assign a policy to the tenant root management group.\nWhat should you do?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Assign the Owner role for the Azure Subscription to User1, and then modify the default conditional access policies."
+      },
+      {
+        "id": "B",
+        "text": "Assign the Owner role for the Azure subscription to User1, and then instruct User1 to configure access management for Azure resources."
+      },
+      {
+        "id": "C",
+        "text": "Assign the Global administrator role to User1, and then instruct User1 to configure access management for Azure resources."
+      },
+      {
+        "id": "D",
+        "text": "Create a new management group and delegate User1 as the owner of the new management group."
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "explanation": "To assign a policy to the tenant root management group, User1 must first have the Azure AD Global administrator role. Only Global Administrators can elevate their privileges to gain initial access to the root management group. Once elevated, they can then assign specific Azure roles (like 'Owner' or 'Policy Contributor') at the root scope, enabling policy assignments. Assigning roles at the subscription level or to child management groups is insufficient for the tenant root.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 36,
+    "question": "Solution: You assign the Network Contributor role at the subscription level to Admin1.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "Version-dependent. Older Microsoft Network Watcher guidance listed Owner, Contributor or Network Contributor at subscription scope as sufficient to enable Traffic Analytics, which would make this solution 'Yes'. Current guidance says Network Contributor alone does not include the Microsoft.Storage and Microsoft.OperationalInsights actions that flow logs / Traffic Analytics also need, which supports the source answer 'No'. The source TXT gives answer B (No) without an explanation; please decide which documentation version your quiz follows.",
+    "topic": "Topic 2",
+    "answerNeedsReview": true
+  },
+  {
+    "id": 37,
+    "question": "Solution: You assign the Owner role at the subscription level to Admin1.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "Assigning the Owner role at the subscription level provides full administrative access to all resources within that subscription. This level of access includes the necessary permissions to configure Network Watcher and enable Traffic Analytics. Azure documentation explicitly states the Owner role is sufficient for this operation.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 38,
+    "question": "Solution: You assign the Reader role at the subscription level to Admin1.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "No. The Reader role provides read-only access and does not permit the configuration changes required to enable Traffic Analytics. Enabling Traffic Analytics necessitates write permissions, which are typically granted by roles such as Owner, Contributor, or Network Contributor at the subscription scope. Updated Azure documentation clarifies that the Reader role is insufficient for this task.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 39,
+    "question": "You have an Azure subscription that contains a user named User1.\nYou need to ensure that User1 can deploy virtual machines and manage virtual networks. The solution must use the principle of least privilege.\nWhich role-based access control (RBAC) role should you assign to User1?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Owner"
+      },
+      {
+        "id": "B",
+        "text": "Virtual Machine Contributor"
+      },
+      {
+        "id": "C",
+        "text": "Contributor"
+      },
+      {
+        "id": "D",
+        "text": "Virtual Machine Administrator Login"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "explanation": "The Contributor role allows User1 to deploy virtual machines and manage virtual networks, satisfying both requirements. The Virtual Machine Contributor role is insufficient as it explicitly excludes management of virtual networks. Assigning Contributor adheres to the principle of least privilege compared to the Owner role, which grants excessive permissions like role assignment.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 41,
+    "question": "You have an Azure subscription named Subscription1 that contains an Azure virtual machine named VM1. VM1 is in a resource group named RG1.\nVM1 runs services that will be used to deploy resources to RG1.\nYou need to ensure that a service running on VM1 can manage the resources in RG1 by using the identity of VM1.\nWhat should you do first?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "From the Azure portal, modify the Managed Identity settings of VM1"
+      },
+      {
+        "id": "B",
+        "text": "From the Azure portal, modify the Access control (IAM) settings of RG1"
+      },
+      {
+        "id": "C",
+        "text": "From the Azure portal, modify the Access control (IAM) settings of VM1"
+      },
+      {
+        "id": "D",
+        "text": "From the Azure portal, modify the Policies settings of RG1"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "The correct answer is A. To enable a service on VM1 to manage resources using the identity of VM1, you must first enable a Managed Identity for VM1. This action provisions an automatically managed identity in Azure Active Directory, allowing the VM to authenticate to other Azure services. After enabling the Managed Identity, you would then use Access Control (IAM) on RG1 to grant the VM's managed identity the necessary permissions.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 43,
+    "question": "You have an Azure DNS zone named adatum.com.\nYou need to delegate a subdomain named research.adatum.com to a different DNS server in Azure.\nWhat should you do?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create an NS record named research in the adatum.com zone."
+      },
+      {
+        "id": "B",
+        "text": "Create a PTR record named research in the adatum.com zone."
+      },
+      {
+        "id": "C",
+        "text": "Modify the SOA record of adatum.com."
+      },
+      {
+        "id": "D",
+        "text": "Create an A record named *.research in the adatum.com zone."
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "To delegate a subdomain like `research.adatum.com`, you must create an NS (Name Server) record within the parent `adatum.com` zone. This NS record specifies the authoritative DNS servers for the `research.adatum.com` subdomain, directing DNS queries to them. This action establishes the delegation, transferring management of the subdomain's DNS resolution to the designated servers.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 45,
+    "question": "You have an Azure subscription named Subscription1 that contains an Azure Log Analytics workspace named Workspace1.\nYou need to view the error events from a table named Event.\nWhich query should you run in Workspace1?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Get-Event Event | where {$_.EventType == \"error\"}"
+      },
+      {
+        "id": "B",
+        "text": "Event | search \"error\""
+      },
+      {
+        "id": "C",
+        "text": "select * from Event where EventType == \"error\""
+      },
+      {
+        "id": "D",
+        "text": "search in (Event) * | where EventType -eq \"error\""
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "Kusto Query Language (KQL) is used for querying Azure Log Analytics workspaces. Option B, `Event | search \"error\"`, is valid KQL that searches all string columns within the `Event` table for the substring 'error', effectively identifying error events. Options A and C use PowerShell and SQL syntax respectively, which are not valid KQL. Option D contains incorrect KQL operators and syntax.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 46,
+    "question": "You have a registered DNS domain named contoso.com.\nYou create a public Azure DNS zone named contoso.com.\nYou need to ensure that records created in the contoso.com zone are resolvable from the internet.\nWhat should you do?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create NS records in contoso.com."
+      },
+      {
+        "id": "B",
+        "text": "Modify the SOA record in the DNS domain registrar."
+      },
+      {
+        "id": "C",
+        "text": "Create the SOA record in contoso.com."
+      },
+      {
+        "id": "D",
+        "text": "Modify the NS records in the DNS domain registrar."
+      }
+    ],
+    "correctAnswers": [
+      "D"
+    ],
+    "explanation": "To make records within an Azure DNS zone resolvable from the internet, the domain must be delegated to Azure DNS. This requires updating the Name Server (NS) records for `contoso.com` at the domain registrar. The registrar's NS records must be modified to point to the specific NS records provided by Azure DNS for the `contoso.com` zone. This delegation informs internet DNS resolvers that Azure DNS is the authoritative source for `contoso.com`.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 50,
+    "question": "You have an Azure Active Directory (Azure AD) tenant.\nYou plan to delete multiple users by using Bulk delete in the Azure Active Directory admin center.\nYou need to create and upload a file for the bulk delete.\nWhich user attributes should you include in the file?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "The user principal name and usage location of each user only"
+      },
+      {
+        "id": "B",
+        "text": "The user principal name of each user only"
+      },
+      {
+        "id": "C",
+        "text": "The display name of each user only"
+      },
+      {
+        "id": "D",
+        "text": "The display name and usage location of each user only"
+      },
+      {
+        "id": "E",
+        "text": "The display name and user principal name of each user only"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "The Azure AD bulk delete operation requires a CSV file that specifies the User Principal Name (UPN) for each user to be deleted. The UPN is the unique identifier for user accounts in Azure AD and is the only mandatory attribute for this specific operation. Other attributes like display name or usage location are not required for the bulk delete process. Reference: Microsoft documentation on Azure AD bulk delete specifies 'User name [userPrincipalName] Required'.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 52,
+    "question": "Solution: You assign the Traffic Manager Contributor role at the subscription level to Admin1.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "Assigning the Traffic Manager Contributor role does not meet the goal. This role is designed for managing Azure Traffic Manager profiles, not for enabling Traffic Analytics. Enabling Traffic Analytics requires the Owner, Contributor, or Network Contributor role at the subscription scope to manage the underlying Log Analytics workspace and flow logs.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 53,
+    "question": "You have three offices and an Azure subscription that contains an Azure Active Directory (Azure AD) tenant.\nYou need to grant user management permissions to a local administrator in each office.\nWhat should you use?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure AD roles"
+      },
+      {
+        "id": "B",
+        "text": "administrative units"
+      },
+      {
+        "id": "C",
+        "text": "access packages in Azure AD entitlement management"
+      },
+      {
+        "id": "D",
+        "text": "Azure roles"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "Administrative units enable granular delegation of Azure AD roles to specific organizational subsets. By assigning local administrators to an administrative unit for their respective office, their assigned Azure AD roles (e.g., User Administrator) will be scoped to manage only the users and groups within that unit. This approach ensures that each local administrator can manage users in their specific office without gaining tenant-wide administrative privileges.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 54,
+    "question": "Solution: On Dev, you assign the Logic App Contributor role to the Developers group.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": null,
+    "topic": "Topic 2"
+  },
+  {
+    "id": 56,
+    "question": "You have an Azure subscription named Subscription1 that contains a virtual network named VNet1. VNet1 is in a resource group named RG1.\nSubscription1 has a user named User1. User1 has the following roles:\n• Reader\n• Security Admin\n• Security Reader You need to ensure that User1 can assign the Reader role for VNet1 to other users.\nWhat should you do?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Remove User1 from the Security Reader role for Subscription1. Assign User1 the Contributor role for RG1."
+      },
+      {
+        "id": "B",
+        "text": "Assign User1 the Owner role for VNet1."
+      },
+      {
+        "id": "C",
+        "text": "Assign User1 the Contributor role for VNet1."
+      },
+      {
+        "id": "D",
+        "text": "Assign User1 the Network Contributor role for VNet1."
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "To enable User1 to assign roles, they must be granted a role with `Microsoft.Authorization/roleAssignments/write` permissions. The Owner role provides full access to manage all resources, including the ability to assign roles in Azure RBAC. The Contributor and Network Contributor roles allow resource management but explicitly exclude role assignment capabilities. User Access Administrator is also an option but is not presented in the choices.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 58,
+    "question": "You have an Azure subscription that contains a storage account named storage1. The storage1 account contains a file share named share1.\nThe subscription is linked to a hybrid Azure Active Directory (Azure AD) tenant that contains a security group named Group1.\nYou need to grant Group1 the Storage File Data SMB Share Elevated Contributor role for share1.\nWhat should you do first?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Enable Active Directory Domain Service (AD DS) authentication for storage1."
+      },
+      {
+        "id": "B",
+        "text": "Grant share-level permissions by using File Explorer."
+      },
+      {
+        "id": "C",
+        "text": "Mount share1 by using File Explorer."
+      },
+      {
+        "id": "D",
+        "text": "Create a private endpoint."
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "To assign an Azure RBAC role, such as 'Storage File Data SMB Share Elevated Contributor,' to an Azure AD security group for an Azure file share over SMB, the storage account must first be configured for identity-based authentication. Enabling Active Directory Domain Services (AD DS) authentication integrates the storage account with an identity provider. This critical first step allows Azure AD identities to be used for access control to the file share.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 59,
+    "question": "You have 15 Azure subscriptions.\nYou have an Azure Active Directory (Azure AD) tenant that contains a security group named Group1.\nYou plan to purchase additional Azure subscription.\nYou need to ensure that Group1 can manage role assignments for the existing subscriptions and the planned subscriptions. The solution must meet the following requirements:\n• Use the principle of least privilege.\n• Minimize administrative effort.\nWhat should you do?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Assign Group1 the Owner role for the root management group."
+      },
+      {
+        "id": "B",
+        "text": "Assign Group1 the User Access Administrator role for the root management group."
+      },
+      {
+        "id": "C",
+        "text": "Create a new management group and assign Group1 the User Access Administrator role for the group."
+      },
+      {
+        "id": "D",
+        "text": "Create a new management group and assign Group1 the Owner role for the group."
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "Assigning the User Access Administrator role to Group1 at the root management group level ensures the principle of least privilege, as this role is specifically for managing role assignments. This action minimizes administrative effort by applying permissions to all existing 15 subscriptions and any future subscriptions through inheritance from the root management group.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 64,
+    "question": "You have two Azure subscriptions named Sub1 and Sub2.\nAn administrator creates a custom role that has an assignable scope to a resource group named RG1 in Sub1.\nYou need to ensure that you can apply the custom role to any resource group in Sub1 and Sub2. The solution must minimize administrative effort.\nWhat should you do?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Select the custom role and add Sub1 and Sub2 to the assignable scopes. Remove RG1 from the assignable scopes."
+      },
+      {
+        "id": "B",
+        "text": "Create a new custom role for Sub1. Create a new custom role for Sub2. Remove the role from RG1."
+      },
+      {
+        "id": "C",
+        "text": "Create a new custom role for Sub1 and add Sub2 to the assignable scopes. Remove the role from RG1."
+      },
+      {
+        "id": "D",
+        "text": "Select the custom role and add Sub1 to the assignable scopes. Remove RG1 from the assignable scopes. Create a new custom role for Sub2."
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "Option A minimizes administrative effort by directly modifying the existing custom role's assignable scopes. Azure custom roles support updating their `assignableScopes` property to include multiple subscriptions, making the role applicable to all resource groups within those subscriptions. This approach avoids the creation of new roles, which would incur greater administrative overhead.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 66,
+    "question": "You have an Azure subscription named Subscription1 that contains an Azure Log Analytics workspace named Workspace1.\nYou need to view the error events from a table named Event.\nWhich query should you run in Workspace1?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "select * from Event where EventType == \"error\""
+      },
+      {
+        "id": "B",
+        "text": "Event | search \"error\""
+      },
+      {
+        "id": "C",
+        "text": "Event | where EventType is \"error\""
+      },
+      {
+        "id": "D",
+        "text": "Get-Event Event | where {$_.EventType == \"error\"}"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "Option B uses valid Kusto Query Language (KQL) syntax, where the `search` operator scans all columns in the `Event` table for the specified term \"error\" to return relevant events. Options A and D use SQL and PowerShell syntax, respectively, which are not valid for Azure Log Analytics queries. Option C uses `is` for equality comparison, which is incorrect in KQL; the `==` or `eq` operator should be used for this purpose.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 67,
+    "question": "You have an Azure App Services web app named App1.\nYou plan to deploy App1 by using Web Deploy.\nYou need to ensure that the developers of App1 can use their Azure AD credentials to deploy content to App1. The solution must use the principle of least privilege.\nWhat should you do?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Assign the Owner role to the developers"
+      },
+      {
+        "id": "B",
+        "text": "Configure app-level credentials for FTPS"
+      },
+      {
+        "id": "C",
+        "text": "Assign the Website Contributor role to the developers"
+      },
+      {
+        "id": "D",
+        "text": "Configure user-level credentials for FTPS"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "explanation": "To allow developers to deploy content to an Azure App Service using Web Deploy with their Azure AD credentials while adhering to the principle of least privilege, the Website Contributor role is appropriate. This built-in role provides permissions to manage web apps, including deployment actions. Assigning the Owner role grants excessive privileges, violating the principle of least privilege. Options involving FTPS credentials are not relevant as the requirement is for Web Deploy using Azure AD credentials.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 68,
+    "question": "Solution: From Azure AD in the Azure portal, you use the Bulk invite users operation.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "No, the solution does not meet the goal. The Azure AD bulk invite operation requires a CSV file that includes both the email address and a redirection URL for each user. The provided CSV file explicitly states it only contains names and email addresses, thus lacking the mandatory redirection URL field, which would cause the bulk invite to fail.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 71,
+    "question": "You have an Azure subscription that contains 10 virtual machines, a key vault named Vault1, and a network security group (NSG) named NSG1. All the resources are deployed to the East US Azure region.\nThe virtual machines are protected by using NSG1. NSG1 is configured to block all outbound traffic to the internet.\nYou need to ensure that the virtual machines can access Vault1. The solution must use the principle of least privilege and minimize administrative effort What should you configure as the destination of the outbound security rule for NSG1?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "an application security group"
+      },
+      {
+        "id": "B",
+        "text": "a service tag"
+      },
+      {
+        "id": "C",
+        "text": "an IP address range"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "Configuring a service tag as the destination for the outbound security rule enables virtual machines to access Azure Key Vault. The `AzureKeyVault` service tag represents the managed IP address ranges for the Key Vault service. This solution minimizes administrative effort by automatically updating IP addresses and adheres to the principle of least privilege by restricting outbound access specifically to the Key Vault service, rather than the entire internet.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 74,
+    "question": "You have an Azure subscription named Subscription1 that contains a virtual network named VNet1. VNet1 is in a resource group named RG1.\nSubscription1 has a user named User1. User1 has the following roles:\n• Reader\n• Security Admin\n• Security Reader You need to ensure that User1 can assign the Reader role for VNet1 to other users.\nWhat should you do?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Assign User1 the Network Contributor role for VNet1."
+      },
+      {
+        "id": "B",
+        "text": "Remove User1 from the Security Reader role for Subscription1. Assign User1 the Contributor role for RG1."
+      },
+      {
+        "id": "C",
+        "text": "Assign User1 the Owner role for VNet1."
+      },
+      {
+        "id": "D",
+        "text": "Assign User1 the Network Contributor role for RG1."
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "explanation": "To assign roles, User1 requires permissions to manage access, which is not included in their current Reader, Security Admin, or Security Reader roles. The Owner role grants full access to manage all resources, including the ability to delegate access (assign roles) at the scope where it's applied. Assigning User1 the Owner role for VNet1 will enable them to assign the Reader role for VNet1 to other users.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 76,
+    "question": "You have an Azure subscription named Subscription1 that contains a virtual network named VNet1. VNet1 is in a resource group named RG1.\nSubscription1 has a user named User1. User1 has the following roles:\n• Reader\n• Security Admin\n• Security Reader You need to ensure that User1 can assign the Reader role for VNet1 to other users.\nWhat should you do?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Remove User1 from the Security Reader role for Subscription1. Assign User1 the Contributor role for RG1."
+      },
+      {
+        "id": "B",
+        "text": "Assign User1 the Owner role for VNet1."
+      },
+      {
+        "id": "C",
+        "text": "Remove User1 from the Security Reader and Reader roles for Subscription1. Assign User1 the Contributor role for Subscription1."
+      },
+      {
+        "id": "D",
+        "text": "Assign User1 the Contributor role for VNet1."
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "To enable User1 to assign roles, they must be granted a role with role assignment permissions. The Owner role provides full access to manage all resources, including the ability to assign roles to others, within its assigned scope. Assigning User1 the Owner role for VNet1 directly fulfills the requirement to assign the Reader role for VNet1 to other users.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 79,
+    "question": "You have an Azure subscription named Subscription1 that contains a virtual network named VNet1. VNet1 is in a resource group named RG1.\nSubscription1 has a user named User1. User1 has the following roles:\n• Reader\n• Security Admin\n• Security Reader You need to ensure that User1 can assign the Reader role for VNet1 to other users.\nWhat should you do?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Remove User1 from the Security Reader role for Subscription1. Assign User1 the Contributor role for RG1."
+      },
+      {
+        "id": "B",
+        "text": "Assign User1 the Access Administrator role for VNet1."
+      },
+      {
+        "id": "C",
+        "text": "Remove User1 from the Security Reader and Reader roles for Subscription1. Assign User1 the Contributor role for Subscription1."
+      },
+      {
+        "id": "D",
+        "text": "Assign User1 the Network Contributor role for RG1."
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "The Access Administrator role in Azure is specifically designed to manage role assignments for a resource or scope. Assigning this role for VNet1 provides User1 with the necessary `Microsoft.Authorization/roleAssignments/write` permission. This enables User1 to assign the Reader role for VNet1 to other users while adhering to the principle of least privilege.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 82,
+    "question": "You have an Azure subscription named Subscription1 that contains a virtual network named VNet1. VNet1 is in a resource group named RG1.\nSubscription1 has a user named User1. User1 has the following roles:\n• Reader\n• Security Admin\n• Security Reader You need to ensure that User1 can assign the Reader role for VNet1 to other users.\nWhat should you do?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Remove User1 from the Security Reader role for Subscription1. Assign User1 the Contributor role for RG1."
+      },
+      {
+        "id": "B",
+        "text": "Assign User1 the User Access Administrator role for VNet1."
+      },
+      {
+        "id": "C",
+        "text": "Remove User1 from the Security Reader and Reader roles for Subscription1."
+      },
+      {
+        "id": "D",
+        "text": "Assign User1 the Contributor role for VNet1."
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "To enable a user to assign roles for a specific resource like VNet1, the user must be granted a role that includes the 'Microsoft.Authorization/roleAssignments/write' permission. The User Access Administrator role provides this capability, specifically designed for managing user access to Azure resources. Assigning this role at the VNet1 scope ensures User1 can assign roles for VNet1 without granting broader permissions. Neither Reader, Security Admin, Security Reader, nor Contributor roles include the necessary permissions to assign roles.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 85,
+    "question": "Solution: You create a PowerShell script that runs the New-MgUser cmdlet for each external user.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "The `New-MgUser` cmdlet creates new user accounts in Azure AD, primarily for internal members, even if the `-UserType` parameter is set to 'Guest'. It does not initiate the Business-to-Business (B2B) invitation process required for onboarding external guest users. For external users, the standard practice is to use `New-MgInvitation` to send an invitation, allowing them to authenticate with their own identity providers and establish a B2B collaboration relationship.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 86,
+    "question": "Solution: You create a PowerShell script that runs the New-MgInvitation cmdlet for each external user.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "The New-MgInvitation cmdlet is used to invite external users, which creates a guest user account in Azure AD upon invitation redemption. While the cmdlet requires an `-InviteRedirectUrl`, a PowerShell script can be designed to include this parameter, either by hardcoding a common URL or deriving it, thereby successfully creating invitations for all users in the CSV file.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 87,
+    "question": "You have an Azure subscription named Subscription1 that contains virtual network named VNet1. VNet1 is in a resource group named RG1.\nA user named User1 has the following roles for Subscription1:\n• Reader\n• Security Admin\n• Security Reader You need to ensure that User1 can assign the Reader role for VNet1 to other users.\nWhat should you do?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Assign User1 the Contributor role for VNet1."
+      },
+      {
+        "id": "B",
+        "text": "Assign User1 the Network Contributor role for VNet1."
+      },
+      {
+        "id": "C",
+        "text": "Assign User1 the User Access Administrator role for VNet1."
+      },
+      {
+        "id": "D",
+        "text": "Remove User1 from the Security Reader and Reader roles for Subscription1. Assign User1 the Contributor role for Subscription1."
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "explanation": "To enable User1 to assign roles, they require specific permissions for role assignment. The User Access Administrator role grants the necessary `Microsoft.Authorization/roleAssignments/write` permission to manage user access to Azure resources. Standard Contributor-level roles, including Contributor and Network Contributor, explicitly do not include the ability to assign roles.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 88,
+    "question": "You have an Azure subscription named Subscription1 that contains virtual network named VNet1. VNet1 is in a resource group named RG1.\nUser named User1 has the following roles for Subscription1:\n• Reader\n• Security Admin\n• Security Reader You need to ensure that User1 can assign the Reader role for VNet1 to other users.\nWhat should you do?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Remove User1 from the Security Reader and Reader roles for Subscription1. Assign User1 the Contributor role for Subscription1."
+      },
+      {
+        "id": "B",
+        "text": "Remove User1 from the Security Reader role for Subscription1. Assign User1 the Contributor role for RG1."
+      },
+      {
+        "id": "C",
+        "text": "Assign User1 the Network Contributor role for VNet1."
+      },
+      {
+        "id": "D",
+        "text": "Assign User1 the User Access Administrator role for VNet1."
+      }
+    ],
+    "correctAnswers": [
+      "D"
+    ],
+    "explanation": "The User Access Administrator role is specifically designed to manage user access to Azure resources, including the ability to assign roles to others. Assigning this role to User1 at the VNet1 scope grants the necessary permissions to assign the Reader role for VNet1. Other roles like Contributor or Network Contributor allow resource management but do not include permissions for role assignments.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 92,
+    "question": "You have an Azure subscription named Subscription1 that contains virtual network named VNet1. VNet1 is in a resource group named RG1.\nA user named User1 has the following roles for Subscription1:\n• Reader\n• Security Admin\n• Security Reader You need to ensure that User1 can assign the Reader role for VNet1 to other users.\nWhat should you do?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Remove User1 from the Security Reader and Reader roles for Subscription1. Assign User1 the Contributor role for Subscription1."
+      },
+      {
+        "id": "B",
+        "text": "Assign User1 the Contributor role for VNet1."
+      },
+      {
+        "id": "C",
+        "text": "Assign User1 the Owner role for VNet1."
+      },
+      {
+        "id": "D",
+        "text": "Assign User1 the Network Contributor role for RG1."
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "explanation": "The Owner role provides full access to manage all resources, including the ability to assign roles, within its assigned scope. By assigning User1 the Owner role for VNet1, User1 gains the `Microsoft.Authorization/roleAssignments/write` permission. This permission is necessary to assign the Reader role for VNet1 to other users. Other roles like Contributor or Network Contributor do not include permissions to manage role assignments.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": null,
+    "question": "Solution: You create a PowerShell script that runs the New-MgUser cmdlet for each user.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "The New-MgUser cmdlet is used to create *new* user accounts directly within the Azure AD tenant, typically for internal users. It does not facilitate inviting external users as guest accounts. To invite external users, the New-MgInvitation (Microsoft Graph PowerShell) or New-AzureADMSInvitation (Azure AD PowerShell) cmdlets are required.",
+    "topic": "Topic None"
+  },
+  {
+    "id": 107,
+    "question": "You have a Microsoft Entra tenant.\nYou plan to perform a bulk import of users.\nYou need to ensure that imported user objects are added automatically as the members of a specific group based on each user's department. The solution must minimize administrative effort.\nWhich two actions should you perform? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.",
+    "questionType": "multiple",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create groups that use the Assigned membership type."
+      },
+      {
+        "id": "B",
+        "text": "Create an Azure Resource Manager (ARM) template."
+      },
+      {
+        "id": "C",
+        "text": "Create groups that use the Dynamic User membership type."
+      },
+      {
+        "id": "D",
+        "text": "Write a PowerShell script that parses an import file."
+      },
+      {
+        "id": "E",
+        "text": "Create an XML file that contains user information and the appropriate attributes."
+      },
+      {
+        "id": "F",
+        "text": "Create a CSV file that contains user information and the appropriate attributes."
+      }
+    ],
+    "correctAnswers": [
+      "C",
+      "F"
+    ],
+    "explanation": "Create groups with Dynamic User membership to automatically add users based on their department attribute, significantly minimizing ongoing administrative effort. Use a CSV file for the bulk import of users, ensuring it contains the department attribute so that dynamic group rules can process memberships correctly upon user creation.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 108,
+    "question": "You have an Azure subscription that contains a storage account named storage1.\nYou need to ensure that the access keys for storage1 rotate automatically.\nWhat should you configure?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "a backup vault"
+      },
+      {
+        "id": "B",
+        "text": "redundancy for storage1"
+      },
+      {
+        "id": "C",
+        "text": "lifecycle management for storage1"
+      },
+      {
+        "id": "D",
+        "text": "an Azure key vault"
+      },
+      {
+        "id": "E",
+        "text": "a Recovery Services vault"
+      }
+    ],
+    "correctAnswers": [
+      "D"
+    ],
+    "explanation": "Azure Key Vault is the dedicated service for securely managing cryptographic keys, secrets, and certificates. It offers an integrated feature specifically designed to automate the rotation of Azure storage account access keys. This capability enhances security by regularly updating credentials and maintaining the principle of least privilege.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 113,
+    "question": "You have a Microsoft Entra tenant named contoso.com.\nYou collaborate with an external partner named fabrikam.com.\nYou plan to invite users in fabrikam.com to the contoso.com tenant.\nYou need to ensure that invitations can be sent only to fabrikam.com users.\nWhat should you do in the Microsoft Entra admin center?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "From Cross-tenant access settings, configure the Tenant restrictions settings."
+      },
+      {
+        "id": "B",
+        "text": "From Cross-tenant access settings, configure the Microsoft cloud settings."
+      },
+      {
+        "id": "C",
+        "text": "From External collaboration settings, configure the Guest user access restrictions settings."
+      },
+      {
+        "id": "D",
+        "text": "From External collaboration settings, configure the Collaboration restrictions settings."
+      }
+    ],
+    "correctAnswers": [
+      "D"
+    ],
+    "explanation": "Collaboration restrictions settings within External collaboration settings in Microsoft Entra ID allow administrators to control which external domains can receive guest invitations. By configuring these settings to 'Allow invitations only to the specified domains' and adding fabrikam.com to the allowlist, you ensure that invitations can only be sent to users from that specific partner domain. This directly addresses the requirement to restrict external invitations to fabrikam.com users.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 114,
+    "question": "You have an Azure subscription that contains a storage account named storage1. The storage1 account contains blob data.\nYou need to assign a role to a user named User1 to ensure that the user can access the blob data in storage1. The role assignment must support conditions.\nWhich two roles can you assign to User1? Each correct answer presents a complete solution.\nNOTE: Each correct selection is worth one point.",
+    "questionType": "multiple",
+    "options": [
+      {
+        "id": "A",
+        "text": "Owner"
+      },
+      {
+        "id": "B",
+        "text": "Storage Account Contributor"
+      },
+      {
+        "id": "C",
+        "text": "Storage Account Backup Contributor"
+      },
+      {
+        "id": "D",
+        "text": "Storage Blob Data Contributor"
+      },
+      {
+        "id": "E",
+        "text": "Storage Blob Data Owner"
+      },
+      {
+        "id": "F",
+        "text": "Storage Blob Delegator"
+      }
+    ],
+    "correctAnswers": [
+      "D",
+      "E"
+    ],
+    "explanation": "The Storage Blob Data Contributor and Storage Blob Data Owner roles are data plane roles that provide access to blob data within a storage account. Both roles explicitly support Azure Role-Based Access Control (RBAC) conditions, which is a key requirement for the assignment.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 117,
+    "question": "You have an Azure subscription that contains a storage account named storage. The storage account contains a blob that stores images.\nClient access to storage1 is granted by using a shared access signature (SAS).\nYou need to ensure that users receive a warning message when they generate a SAS that exceeds a seven-day time period.\nWhat should you do for storage?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Enable a read-only lock."
+      },
+      {
+        "id": "B",
+        "text": "Configure an alert rule."
+      },
+      {
+        "id": "C",
+        "text": "Add a lifecycle management rule."
+      },
+      {
+        "id": "D",
+        "text": "Set Allow recommended upper limit for shared access signature (SAS) expiry interval to Enabled."
+      }
+    ],
+    "correctAnswers": [
+      "D"
+    ],
+    "explanation": "Option D is correct. Configuring a Shared Access Signature (SAS) expiration policy within an Azure storage account allows administrators to set a recommended upper limit for SAS validity. When a user attempts to generate a SAS that exceeds this configured limit (e.g., seven days), the Azure portal presents a warning message to the user, fulfilling the requirement. This policy provides direct user feedback during SAS generation, unlike an alert rule which would typically notify administrators post-event.",
+    "topic": "Topic 2"
+  },
+  {
+    "id": 118,
+    "question": "You have an Azure subscription named Subscription1 that contains the storage accounts shown in the following table:\nYou plan to use the Azure Import/Export service to export data from Subscription1.\nYou need to identify which storage account can be used to export the data.\nWhat should you identify?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "storage1"
+      },
+      {
+        "id": "B",
+        "text": "storage2"
+      },
+      {
+        "id": "C",
+        "text": "storage3"
+      },
+      {
+        "id": "D",
+        "text": "storage4"
+      }
+    ],
+    "correctAnswers": [
+      "D"
+    ],
+    "explanation": "The Azure Import/Export service supports data export from General Purpose v1, General Purpose v2, and Blob Storage accounts. Storage4, a StorageV2 (General Purpose v2) account, provides full compatibility for exporting all supported Azure blob types, including block, page, and append blobs. Specialized accounts like BlockBlobStorage (storage2) have limitations on blob types, and FileStorage accounts (storage3) are not supported for export operations. [Review note: the table referenced by this question is missing from the source TXT, so the answer could not be independently verified.]",
+    "topic": "Topic 3",
+    "answerNeedsReview": true
+  },
+  {
+    "id": 133,
+    "question": "You have an Azure subscription that contains a storage account named account1.\nYou plan to upload the disk files of a virtual machine to account1 from your on-premises network. The on-premises network uses a public IP address space of\n131.107.1.0/24.\nYou plan to use the disk files to provision an Azure virtual machine named VM1. VM1 will be attached to a virtual network named VNet1. VNet1 uses an IP address space of 192.168.0.0/24.\nYou need to configure account1 to meet the following requirements:\n• Ensure that you can upload the disk files to account1.\n• Ensure that you can attach the disks to VM1.\n• Prevent all other access to account1.\nWhich two actions should you perform? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.",
+    "questionType": "multiple",
+    "options": [
+      {
+        "id": "A",
+        "text": "From the Networking blade of account1, select Selected networks."
+      },
+      {
+        "id": "B",
+        "text": "From the Networking blade of account1, select Allow trusted Microsoft services to access this storage account."
+      },
+      {
+        "id": "C",
+        "text": "From the Networking blade of account1, add the 131.107.1.0/24 IP address range."
+      },
+      {
+        "id": "D",
+        "text": "From the Networking blade of account1, add VNet1."
+      },
+      {
+        "id": "E",
+        "text": "From the Service endpoints blade of VNet1, add a service endpoint."
+      }
+    ],
+    "correctAnswers": [
+      "A",
+      "C"
+    ],
+    "explanation": "Selecting 'Selected networks' (A) configures the storage account firewall to restrict access, fulfilling the requirement to prevent all other access. Adding the on-premises IP address range 131.107.1.0/24 (C) allows the upload of disk files from your network. The attachment of managed disks to an Azure VM is typically handled by the Azure Compute control plane and does not require additional storage account firewall rules for the VM's virtual network or explicit trusted service access to function.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 136,
+    "question": "You plan to use the Azure Import/Export service to copy files to a storage account.\nWhich two files should you create before you prepare the drives for the import job? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.",
+    "questionType": "multiple",
+    "options": [
+      {
+        "id": "A",
+        "text": "an XML manifest file"
+      },
+      {
+        "id": "B",
+        "text": "a dataset CSV file"
+      },
+      {
+        "id": "C",
+        "text": "a JSON configuration file"
+      },
+      {
+        "id": "D",
+        "text": "a PowerShell PS1 file"
+      },
+      {
+        "id": "E",
+        "text": "a driveset CSV file"
+      }
+    ],
+    "correctAnswers": [
+      "B",
+      "E"
+    ],
+    "explanation": "The Azure Import/Export service utilizes a dataset CSV file to specify the source data (files and folders) to be imported and their target destinations within Azure storage. A driveset CSV file is also required to detail the physical hard drives involved in the import job, including their drive letter and BitLocker encryption key. Both files are critical input for the WAImportExport tool when preparing the drives.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 137,
+    "question": "You have a Recovery Service vault that you use to test backups. The test backups contain two protected virtual machines.\nYou need to delete the Recovery Services vault.\nWhat should you do first?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "From the Recovery Service vault, delete the backup data."
+      },
+      {
+        "id": "B",
+        "text": "Modify the disaster recovery properties of each virtual machine."
+      },
+      {
+        "id": "C",
+        "text": "Modify the locks of each virtual machine."
+      },
+      {
+        "id": "D",
+        "text": "From the Recovery Service vault, stop the backup of each backup item."
+      }
+    ],
+    "correctAnswers": [
+      "D"
+    ],
+    "explanation": "To delete a Recovery Services vault that contains protected virtual machines, you must first stop the backup process for all associated backup items. This action unregisters the protected items from the vault and moves them to a soft-delete state, allowing the vault to be deleted. Attempting to delete a vault with active backups will result in an error. Reference: Microsoft Learn documentation on deleting Recovery Services vaults.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 139,
+    "question": "You have an Azure subscription named Subscription1.\nYou have 5 TB of data that you need to transfer to Subscription1.\nYou plan to use an Azure Import/Export job.\nWhat can you use as the destination of the imported data?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "a virtual machine"
+      },
+      {
+        "id": "B",
+        "text": "an Azure Cosmos DB database"
+      },
+      {
+        "id": "C",
+        "text": "Azure File Storage"
+      },
+      {
+        "id": "D",
+        "text": "the Azure File Sync Storage Sync Service"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "explanation": "The Azure Import/Export service facilitates transferring large amounts of data by shipping physical disk drives directly to an Azure datacenter. This service is designed to import data specifically into Azure Blob storage or Azure Files. Given the 5 TB data size, Azure File Storage is a supported and suitable destination, as Azure file shares can accommodate up to 5 TB. Reference: Azure Import/Export service overview",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 141,
+    "question": "You have an Azure Storage account named storage1.\nYou plan to use AzCopy to copy data to storage1.\nYou need to identify the storage services in storage1 to which you can copy the data.\nWhich storage services should you identify?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "blob, file, table, and queue"
+      },
+      {
+        "id": "B",
+        "text": "blob and file only"
+      },
+      {
+        "id": "C",
+        "text": "file and table only"
+      },
+      {
+        "id": "D",
+        "text": "file only"
+      },
+      {
+        "id": "E",
+        "text": "blob, table, and queue only"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "AzCopy v10, the current standard version, is specifically optimized for high-performance data transfer with Azure Blob Storage and Azure Files. It allows copying data into these services efficiently. While older versions might have had different capabilities, modern AzCopy focuses on these primary file and object storage types. Reference: Microsoft Azure AzCopy documentation.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 143,
+    "question": "You have an Azure subscription that contains an Azure Storage account.\nYou plan to create an Azure container instance named container1 that will use a Docker image named Image1. Image1 contains a Microsoft SQL Server instance that requires persistent storage.\nYou need to configure a storage service for Container1.\nWhat should you use?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Files"
+      },
+      {
+        "id": "B",
+        "text": "Azure Blob storage"
+      },
+      {
+        "id": "C",
+        "text": "Azure Queue storage"
+      },
+      {
+        "id": "D",
+        "text": "Azure Table storage"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "Azure Files is the appropriate choice for persistent storage with Azure Container Instances. It allows mounting SMB or NFS file shares as volumes directly into containers, providing a file system for applications like SQL Server to store data persistently. This ensures data persists even if the container restarts, which is critical for stateful applications.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 144,
+    "question": "You have an app named App1 that runs on two Azure virtual machines named VM1 and VM2.\nYou plan to implement an Azure Availability Set for App1. The solution must ensure that App1 is available during planned maintenance of the hardware hosting VM1 and VM2.\nWhat should you include in the Availability Set?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "one update domain"
+      },
+      {
+        "id": "B",
+        "text": "two fault domains"
+      },
+      {
+        "id": "C",
+        "text": "one fault domain"
+      },
+      {
+        "id": "D",
+        "text": "two update domains"
+      }
+    ],
+    "correctAnswers": [
+      "D"
+    ],
+    "explanation": "Update Domains isolate VMs from planned maintenance events, ensuring only one group of VMs and their underlying hardware is rebooted at a time. To ensure App1's availability during planned hardware maintenance, VM1 and VM2 must be placed in separate update domains. An Availability Set ensures this distribution, requiring at least two update domains for two VMs to maintain uptime.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 145,
+    "question": "You have an Azure subscription named Subscription1.\nYou have 5 TB of data that you need to transfer to Subscription1.\nYou plan to use an Azure Import/Export job.\nWhat can you use as the destination of the imported data?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "an Azure Cosmos DB database"
+      },
+      {
+        "id": "B",
+        "text": "Azure Blob storage"
+      },
+      {
+        "id": "C",
+        "text": "Azure Data Lake Store"
+      },
+      {
+        "id": "D",
+        "text": "the Azure File Sync Storage Sync Service"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "The Azure Import/Export service is primarily used to securely transfer large amounts of data to Azure Blob storage or Azure Files by shipping physical disk drives. Of the provided options, Azure Blob storage is a direct and supported destination for imported data. Other services like Azure Cosmos DB, Azure Data Lake Store, or Azure File Sync Storage Sync Service are not direct targets for an Import/Export job.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 151,
+    "question": "You have two Azure virtual machines named VM1 and VM2. You have two Recovery Services vaults named RSV1 and RSV2.\nVM2 is backed up to RSV1.\nYou need to back up VM2 to RSV2.\nWhat should you do first?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "From the RSV1 blade, click Backup items and stop the VM2 backup"
+      },
+      {
+        "id": "B",
+        "text": "From the RSV2 blade, click Backup. From the Backup blade, select the backup for the virtual machine, and then click Backup"
+      },
+      {
+        "id": "C",
+        "text": "From the VM2 blade, click Disaster recovery, click Replication settings, and then select RSV2 as the Recovery Services vault"
+      },
+      {
+        "id": "D",
+        "text": "From the RSV1 blade, click Backup Jobs and export the VM2 job"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "An Azure virtual machine can only be protected by one Recovery Services vault for backup at a time. To back up VM2 to RSV2, the existing backup association with RSV1 must first be terminated. Option A, stopping the VM2 backup from the RSV1 blade, is the necessary initial step to unregister the VM from its current vault and allow it to be configured for backup in RSV2.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 152,
+    "question": "You have a general-purpose v1 Azure Storage account named storage1 that uses locally-redundant storage (LRS).\nYou need to ensure that the data in the storage account is protected if a zone fails. The solution must minimize costs and administrative effort.\nWhat should you do first?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create a new storage account."
+      },
+      {
+        "id": "B",
+        "text": "Configure object replication rules."
+      },
+      {
+        "id": "C",
+        "text": "Upgrade the account to general-purpose v2."
+      },
+      {
+        "id": "D",
+        "text": "Modify the Replication setting of storage1."
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "explanation": "General-purpose v1 storage accounts do not support Zone-Redundant Storage (ZRS), which is required for protection against zone failures with minimized cost. Upgrading the account to general-purpose v2 is the first necessary step, as GPv2 accounts support ZRS and allow for subsequent modification of the replication setting to achieve the desired redundancy.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 154,
+    "question": "You create an Azure Storage account named contosostorage.\nYou plan to create a file share named data.\nUsers need to map a drive to the data file share from home computers that run Windows 10.\nWhich outbound port should you open between the home computers and the data file share?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "80"
+      },
+      {
+        "id": "B",
+        "text": "443"
+      },
+      {
+        "id": "C",
+        "text": "445"
+      },
+      {
+        "id": "D",
+        "text": "3389"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "explanation": "Azure file shares utilize the Server Message Block (SMB) protocol for drive mapping and file access. SMB communication over TCP/IP is standard on port 445. Therefore, to map a drive to an Azure file share from a Windows 10 computer, outbound port 445 must be open.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 155,
+    "question": "You have an Azure subscription named Subscription1.\nYou have 5 TB of data that you need to transfer to Subscription1.\nYou plan to use an Azure Import/Export job.\nWhat can you use as the destination of the imported data?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure File Storage"
+      },
+      {
+        "id": "B",
+        "text": "an Azure Cosmos DB database"
+      },
+      {
+        "id": "C",
+        "text": "Azure Data Factory"
+      },
+      {
+        "id": "D",
+        "text": "Azure SQL Database"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "The Azure Import/Export service is designed to transfer large amounts of data into Azure Blob Storage or Azure File Storage. It uses physical disks to move data efficiently for these specific storage types. Azure Cosmos DB, Azure Data Factory, and Azure SQL Database are not direct destinations for an Azure Import/Export job.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 158,
+    "question": "You have an Azure Storage account named storage1 that contains a blob container named container1.\nYou need to prevent new content added to container1 from being modified for one year.\nWhat should you configure?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "the access tier"
+      },
+      {
+        "id": "B",
+        "text": "an access policy"
+      },
+      {
+        "id": "C",
+        "text": "the Access control (IAM) settings"
+      },
+      {
+        "id": "D",
+        "text": "the access level"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "To prevent new content from being modified for one year, you must configure an immutable storage policy with time-based retention. This policy, a type of access policy applied at the container level, enforces a write-once, read-many (WORM) state for blobs. Once set, blobs within the container cannot be modified or deleted until the specified retention period expires, ensuring data integrity and compliance.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 160,
+    "question": "You are configuring Azure Active Directory (Azure AD) authentication for an Azure Storage account named storage1.\nYou need to ensure that the members of a group named Group1 can upload files by using the Azure portal. The solution must use the principle of least privilege.\nWhich two roles should you configure for storage1? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.",
+    "questionType": "multiple",
+    "options": [
+      {
+        "id": "A",
+        "text": "Storage Account Contributor"
+      },
+      {
+        "id": "B",
+        "text": "Storage Blob Data Contributor"
+      },
+      {
+        "id": "C",
+        "text": "Reader"
+      },
+      {
+        "id": "D",
+        "text": "Contributor"
+      },
+      {
+        "id": "E",
+        "text": "Storage Blob Data Reader"
+      }
+    ],
+    "correctAnswers": [
+      "B",
+      "C"
+    ],
+    "explanation": "To upload files via the Azure portal, members need data plane permissions to write blobs and management plane permissions to view the storage account. The Storage Blob Data Contributor role (B) grants write access to blob data, enabling file uploads. The Reader role (C) allows users to view the storage account resource in the portal, which is essential for navigation to blob containers. This combination adheres to the principle of least privilege, providing only the necessary permissions.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 162,
+    "question": "You have an on-premises server that contains a folder named D:\\Folder1.\nYou need to copy the contents of D:\\Folder1 to the public container in an Azure Storage account named contosodata.\nWhich command should you run?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "https://contosodata.blob.core.windows.net/public"
+      },
+      {
+        "id": "B",
+        "text": "azcopy sync D:\\folder1 https://contosodata.blob.core.windows.net/public --snapshot"
+      },
+      {
+        "id": "C",
+        "text": "azcopy copy D:\\folder1 https://contosodata.blob.core.windows.net/public --recursive"
+      },
+      {
+        "id": "D",
+        "text": "az storage blob copy start-batch D:\\Folder1 https://contosodata.blob.core.windows.net/public"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "explanation": "Option C is correct because the `azcopy copy` command is used to transfer data from a local file system to Azure Storage. The `--recursive` flag is essential to ensure that all contents, including subdirectories and files within D:\\Folder1, are copied to the specified public container. The other options are either not commands, designed for synchronization with specific rules, or used for server-side blob copies within Azure.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 163,
+    "question": "You have an Azure subscription.\nIn the Azure portal, you plan to create a storage account named storage1 that will have the following settings:\n• Performance: Standard\n• Replication: Zone-redundant storage (ZRS)\n• Access tier (default): Cool\n• Hierarchical namespace: Disabled You need to ensure that you can set Account kind for storage1 to BlockBlobStorage.\nWhich setting should you modify first?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Performance"
+      },
+      {
+        "id": "B",
+        "text": "Replication"
+      },
+      {
+        "id": "C",
+        "text": "Access tier (default)"
+      },
+      {
+        "id": "D",
+        "text": "Hierarchical namespace"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "To set the Azure Storage Account kind to BlockBlobStorage, the account performance tier must be Premium. The question specifies a current Performance setting of Standard, which is incompatible with the BlockBlobStorage account kind. Therefore, the Performance setting must be changed from Standard to Premium first.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 165,
+    "question": "You create an Azure Storage account.\nYou plan to add 10 blob containers to the storage account.\nFor one of the containers, you need to use a different key to encrypt data at rest.\nWhat should you do before you create the container?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Generate a shared access signature (SAS)."
+      },
+      {
+        "id": "B",
+        "text": "Modify the minimum TLS version."
+      },
+      {
+        "id": "C",
+        "text": "Rotate the access keys."
+      },
+      {
+        "id": "D",
+        "text": "Create an encryption scope."
+      }
+    ],
+    "correctAnswers": [
+      "D"
+    ],
+    "explanation": "To encrypt a specific blob container with a different key than the storage account's default, you must first create an encryption scope. An encryption scope provides a named configuration that defines distinct encryption settings, including the encryption key. This allows for granular key management, enabling different keys (e.g., customer-managed or specific Microsoft-managed keys) to be applied at the container or blob level.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 168,
+    "question": "You have an on-premises server that contains a folder named D:\\Folder1.\nYou need to copy the contents of D:\\Folder1 to the public container in an Azure Storage account named contosodata.\nWhich command should you run?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "az storage blob copy start D:\\Folder1 https://contosodata.blob.core.windows.net/public"
+      },
+      {
+        "id": "B",
+        "text": "azcopy sync D:\\folder1 https://contosodata.blob.core.windows.net/public --snapshot"
+      },
+      {
+        "id": "C",
+        "text": "azcopy copy D:\\folder1 https://contosodata.blob.core.windows.net/public --recursive"
+      },
+      {
+        "id": "D",
+        "text": "az storage blob copy start-batch D:\\Folder1 https://contosodata.blob.core.windows.net/public"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "explanation": "The `azcopy copy` command is the correct utility for transferring files and directories to Azure Storage from an on-premises location. The `--recursive` flag is essential to ensure all contents, including subdirectories and files within D:\\Folder1, are copied to the target Azure Blob container. Options A and D use `az storage blob copy start` or `start-batch`, which are designed for copying blobs between Azure Storage locations, not from local file systems. Option B's `azcopy sync` command performs synchronization, which has different behavioral characteristics than a simple copy operation.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 171,
+    "question": "You have an Azure subscription named Subscription1.\nYou have 5 TB of data that you need to transfer to Subscription1.\nYou plan to use an Azure Import/Export job.\nWhat can you use as the destination of the imported data?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "an Azure Cosmos DB database"
+      },
+      {
+        "id": "B",
+        "text": "Azure File Storage"
+      },
+      {
+        "id": "C",
+        "text": "Azure SQL Database"
+      },
+      {
+        "id": "D",
+        "text": "a virtual machine"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "Azure Import/Export jobs facilitate offline data transfer to Azure storage. For import operations, the supported destinations are Azure Blob storage and Azure Files. An Azure Cosmos DB database, Azure SQL Database, or a virtual machine are not direct target destinations for data imported via the Azure Import/Export service.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 174,
+    "question": "You have an Azure subscription that contains a storage account named storage1.\nYou plan to create a blob container named container1.\nYou need to use customer-managed key encryption for container1.\nWhich key should you use?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "an EC key that uses the P-384 curve only"
+      },
+      {
+        "id": "B",
+        "text": "an EC key that uses the P-521 curve only"
+      },
+      {
+        "id": "C",
+        "text": "an EC key that uses the P-384 curve or P-521 curve only"
+      },
+      {
+        "id": "D",
+        "text": "an RSA key with a key size of 4096 only"
+      },
+      {
+        "id": "E",
+        "text": "an RSA key type with a key size of 2048, 3072, or 4096 only"
+      }
+    ],
+    "correctAnswers": [
+      "E"
+    ],
+    "explanation": "Azure Storage customer-managed keys (CMK) specifically support RSA and RSA-HSM keys. The permissible key sizes for these RSA keys are 2048, 3072, or 4096 bits. Elliptic Curve (EC) keys are not supported for customer-managed encryption in Azure Storage. Therefore, option E correctly identifies the supported RSA key types and sizes.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 177,
+    "question": "You have an Azure subscription named Subscription1.\nYou have 5 TB of data that you need to transfer to Subscription1.\nYou plan to use an Azure Import/Export job.\nWhat can you use as the destination of the imported data?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Blob Storage"
+      },
+      {
+        "id": "B",
+        "text": "Azure Data Lake Store"
+      },
+      {
+        "id": "C",
+        "text": "Azure SQL Database"
+      },
+      {
+        "id": "D",
+        "text": "a virtual machine"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "The Azure Import/Export service is designed for securely transferring large amounts of data to and from Azure storage. This service specifically supports importing data to Azure Blob storage and Azure Files. Azure Blob storage is a valid destination for the 5 TB of data being imported via an Azure Import/Export job.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 180,
+    "question": "You have an Azure subscription named Subscription1.\nYou have 5 TB of data that you need to transfer to Subscription1.\nYou plan to use an Azure Import/Export job.\nWhat can you use as the destination of the imported data?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "an Azure Cosmos DB database"
+      },
+      {
+        "id": "B",
+        "text": "Azure Data Lake Store"
+      },
+      {
+        "id": "C",
+        "text": "Azure Blob storage"
+      },
+      {
+        "id": "D",
+        "text": "Azure Data Factory"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "explanation": "Azure Import/Export jobs are used for transferring large amounts of data into Azure. The service explicitly supports importing data into Azure Blob storage or Azure Files. Azure Cosmos DB, Azure Data Lake Store, and Azure Data Factory are not direct destinations for data imported via the Azure Import/Export service.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 182,
+    "question": "You have an Azure subscription named Subscription1.\nYou have 5 TB of data that you need to transfer to Subscription1.\nYou plan to use an Azure Import/Export job.\nWhat can you use as the destination of the imported data?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "an Azure Cosmos DB database"
+      },
+      {
+        "id": "B",
+        "text": "Azure Blob Storage"
+      },
+      {
+        "id": "C",
+        "text": "Azure SQL Database"
+      },
+      {
+        "id": "D",
+        "text": "the Azure File Sync Storage Sync Service"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "The Azure Import/Export service facilitates securely transferring large volumes of data to Azure. This service specifically supports importing data into Azure Blob Storage and Azure Files by shipping physical disk drives to an Azure datacenter. Other listed services, such as Azure Cosmos DB or Azure SQL Database, are not direct destinations for an Azure Import/Export job.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 183,
+    "question": "You plan to create an Azure Storage account named storage1 that will contain a file share named share1.\nYou need to ensure that share1 can support SMB Multichannel. The solution must minimize costs.\nHow should you configure storage?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Premium performance with locally-redundant storage (LRS)"
+      },
+      {
+        "id": "B",
+        "text": "Standard performance with zone-redundant storage (ZRS)"
+      },
+      {
+        "id": "C",
+        "text": "Premium performance with geo-redundant storage (GRS)"
+      },
+      {
+        "id": "D",
+        "text": "Standard performance with locally-redundant storage (LRS)"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "SMB Multichannel is fully supported on premium Azure file shares (FileStorage accounts). To minimize costs while providing this capability, locally-redundant storage (LRS) is the most economical redundancy option. This combination of Premium performance and LRS satisfies both the SMB Multichannel requirement and the cost minimization objective.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 184,
+    "question": "You have an Azure subscription named Subscription1.\nYou have 5 TB of data that you need to transfer to Subscription1.\nYou plan to use an Azure Import/Export job.\nWhat can you use as the destination of the imported data?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Data Lake Store"
+      },
+      {
+        "id": "B",
+        "text": "Azure File Storage"
+      },
+      {
+        "id": "C",
+        "text": "Azure SQL Database"
+      },
+      {
+        "id": "D",
+        "text": "the Azure File Sync Storage Sync Service"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "The Azure Import/Export service is designed to transfer large amounts of data by shipping physical disk drives to an Azure datacenter. It supports importing data directly into Azure Blob storage or Azure Files. Azure File Storage is therefore a valid destination for an Import/Export job.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 185,
+    "question": "You have an Azure subscription that contains a storage account named storage1.\nYou plan to use conditions when assigning role-based access control (RBAC) roles to storage1.\nWhich storage1 services support conditions when assigning roles?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "containers only"
+      },
+      {
+        "id": "B",
+        "text": "file shares only"
+      },
+      {
+        "id": "C",
+        "text": "tables only"
+      },
+      {
+        "id": "D",
+        "text": "queues only"
+      },
+      {
+        "id": "E",
+        "text": "containers and queues only"
+      },
+      {
+        "id": "F",
+        "text": "files shares and tables only"
+      }
+    ],
+    "correctAnswers": [
+      "E"
+    ],
+    "explanation": "Azure RBAC conditions are currently supported for controlling access to blob data (containers) and queue message data. This functionality enables fine-grained access control based on attributes like resource properties or request metadata for these specific storage services. Other Azure Storage services, such as file shares and tables, do not currently support RBAC conditions.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 187,
+    "question": "Solution: You assign the Storage Account Encryption Scope Contributor Role to User1.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "The Storage Account Encryption Scope Contributor role only grants permissions to manage encryption scopes within a storage account. It does not include the necessary permissions to list or regenerate storage account keys. To perform these actions, User1 would require roles like the Storage Account Key Operator Service Role or Storage Account Contributor, which contain the `Microsoft.Storage/storageAccounts/listKeys/action` and `Microsoft.Storage/storageAccounts/regenerateKey/action` permissions. Thus, the solution does not meet the goal.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 190,
+    "question": "You have an Azure Storage account that contains 5,000 blobs accessed by multiple users.\nYou need to ensure that the users can view only specific blobs based on blob index tags.\nWhat should you include in the solution?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "a role assignment condition"
+      },
+      {
+        "id": "B",
+        "text": "a stored access policy"
+      },
+      {
+        "id": "C",
+        "text": "just-in-time (JIT) VM access"
+      },
+      {
+        "id": "D",
+        "text": "a shared access signature (SAS)"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "A role assignment condition, leveraging Attribute-Based Access Control (ABAC), enables fine-grained access control for Azure Storage blobs. You can configure a condition to restrict a user's access to only those blobs possessing specific blob index tags. This dynamically ensures users can view only relevant blobs by evaluating their tags at the time of access.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 191,
+    "question": "You have an Azure Storage account named storage1.\nFor storage1, you create an encryption scope named Scope1.\nWhich storage types can you encrypt by using Scope?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "file shares only"
+      },
+      {
+        "id": "B",
+        "text": "containers only"
+      },
+      {
+        "id": "C",
+        "text": "file shares and containers only"
+      },
+      {
+        "id": "D",
+        "text": "containers and tables only"
+      },
+      {
+        "id": "E",
+        "text": "file shares, containers, and tables only"
+      },
+      {
+        "id": "F",
+        "text": "file shares, containers, tables, and queues"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "Azure Storage encryption scopes are designed to manage encryption with customer-managed keys at a granular level within Azure Blob Storage. This functionality specifically applies to containers and individual blobs, allowing for distinct encryption settings per container. While other storage types are encrypted at rest, the encryption scope feature itself targets Blob Storage. Reference: https://learn.microsoft.com/en-us/azure/storage/blobs/encryption-scope-overview",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 193,
+    "question": "You have an Azure subscription named Subscription1.\nYou have 5 TB of data that you need to transfer to Subscription1.\nYou plan to use an Azure Import/Export job.\nWhat can you use as the destination of the imported data?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Data Factory"
+      },
+      {
+        "id": "B",
+        "text": "the Azure File Sync Storage Sync Service"
+      },
+      {
+        "id": "C",
+        "text": "Azure File Storage"
+      },
+      {
+        "id": "D",
+        "text": "Azure SQL Database"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "explanation": "Azure Import/Export jobs are used for transferring large amounts of data to Azure Blob Storage or Azure Files. When importing data, the destination in Azure must be either a blob container in Azure Blob Storage or an Azure file share within Azure File Storage. Therefore, Azure File Storage is a supported destination for data transferred using an Azure Import/Export job.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 195,
+    "question": "You have an Azure virtual machine named VM1 and an Azure key vault named Vault1.\nOn VM1, you plan to configure Azure Disk Encryption to use a key encryption key (KEK).\nYou need to prepare Vault1 for Azure Disk Encryption.\nWhich two actions should you perform on Vault1? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.",
+    "questionType": "multiple",
+    "options": [
+      {
+        "id": "A",
+        "text": "Select Azure Virtual machines for deployment."
+      },
+      {
+        "id": "B",
+        "text": "Create a new key."
+      },
+      {
+        "id": "C",
+        "text": "Create a new secret."
+      },
+      {
+        "id": "D",
+        "text": "Configure a key rotation policy."
+      },
+      {
+        "id": "E",
+        "text": "Select Azure Disk Encryption for volume encryption."
+      }
+    ],
+    "correctAnswers": [
+      "B",
+      "E"
+    ],
+    "explanation": "To prepare an Azure Key Vault for Azure Disk Encryption using a Key Encryption Key (KEK), two essential actions are required. First, you must create a new key in the Key Vault to serve as the KEK, which will be used to wrap the BitLocker Encryption Key (BEK). Second, the Key Vault's access policies must be configured by selecting \"Azure Disk Encryption for volume encryption\" to grant the Azure platform the necessary permissions to access the keys for encryption operations.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 196,
+    "question": "You have an Azure subscription that contains a virtual machine named VM1 and an Azure key vault named KV1.\nYou need to configure encryption for VM1. The solution must meet the following requirements:\n• Store and use the encryption key in KV1.\n• Maintain encryption if VM1 is downloaded from Azure.\n• Encrypt both the operating system disk and the data disks.\nWhich encryption method should you use?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "customer-managed keys"
+      },
+      {
+        "id": "B",
+        "text": "Confidential disk encryption"
+      },
+      {
+        "id": "C",
+        "text": "Azure Disk Encryption"
+      },
+      {
+        "id": "D",
+        "text": "encryption at host"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "explanation": "Azure Disk Encryption (ADE) provides full volume encryption for both operating system and data disks. It integrates with Azure Key Vault to store and manage encryption keys, fulfilling the requirement to use KV1. This client-side encryption ensures the disks remain encrypted even if the VM is downloaded from Azure.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 198,
+    "question": "You have an Azure subscription that contains a storage account named storage1. The storage1 account contains a container named container1.\nYou need to configure access to container1. The solution must meet the following requirements:\n• Only allow read access.\n• Allow both HTTP and HTTPS protocols.\n• Apply access permissions to all the content in the container.\nWhat should you use?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "an access policy"
+      },
+      {
+        "id": "B",
+        "text": "a shared access signature (SAS)"
+      },
+      {
+        "id": "C",
+        "text": "Azure Content Delivery Network (CDN)"
+      },
+      {
+        "id": "D",
+        "text": "access keys"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "A Shared Access Signature (SAS) provides delegated access to storage resources with precise control over permissions and protocols. A SAS token can be configured for read-only access, specified to allow both HTTP and HTTPS, and scoped to an entire container to apply to all its contents. This directly meets the requirements for granular read access, protocol flexibility, and container-wide application.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 199,
+    "question": "You need to create an Azure Storage account named storage1. The solution must meet the following requirements:\n• Support Azure Data Lake Storage.\n• Minimize costs for infrequently accessed data.\n• Automatically replicate data to a secondary Azure region.\nWhich three options should you configure for storage1? Each correct answer presents part of the solution.\nNOTE: Each correct answer is worth one point.",
+    "questionType": "multiple",
+    "options": [
+      {
+        "id": "A",
+        "text": "zone-redundant storage (ZRS)"
+      },
+      {
+        "id": "B",
+        "text": "the Cool access tier"
+      },
+      {
+        "id": "C",
+        "text": "geo-redundant storage (GRS)"
+      },
+      {
+        "id": "D",
+        "text": "the Hot access tier"
+      },
+      {
+        "id": "E",
+        "text": "hierarchical namespace"
+      }
+    ],
+    "correctAnswers": [
+      "B",
+      "C",
+      "E"
+    ],
+    "explanation": "Enabling hierarchical namespace (E) is required to support Azure Data Lake Storage Gen2 capabilities. The Cool access tier (B) minimizes costs for infrequently accessed data by offering lower storage prices. Geo-redundant storage (GRS) (C) automatically replicates data to a secondary Azure region, ensuring disaster recovery.",
+    "topic": "Topic 3"
+  }
+]
