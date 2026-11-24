@@ -12,6 +12,7 @@ export interface Question {
   explanation: string | null;
   topic?: string;
   answerNeedsReview?: boolean;
+  hasLocalId?: boolean;
 }
 
 export interface Attempt {

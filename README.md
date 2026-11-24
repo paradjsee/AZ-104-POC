@@ -23,12 +23,8 @@ To create and preview a production build, run `npm run build` and then `npm run 
 
 ## Questions
 
-Edit [`src/questions.json`](./src/questions.json) to add questions. Each entry has an `id`, `question`, `questionType` (`single` or `multiple`), an array of `{ "id", "text" }` options, `correctAnswers`, `explanation`, and an optional `topic`.
-
-The supplied source dataset has 90 questions. Its verified answers are used where available; the two entries without a verified answer use the source-provided answer and are flagged in the app. Missing explanations are displayed with a fallback message.
+The app uses [src/questions.json](./src/questions.json), normalized from [raw/az104_questions.json](./raw/az104_questions.json). [raw/scenario_groups.json](./raw/scenario_groups.json) maps question IDs to scenario groups. The source supplies 135 questions. Two entries without a source ID use local IDs 301 and 302. The app uses the source-provided answer where a verified answer is missing and flags those entries for review.
 
 ## Practice flow
 
-Choose one or multiple options, then select **Check Answer**. The app marks the correct answers, displays the explanation, and locks that attempt. Use the navigation buttons to move between questions. The **Review Wrong Questions** mode lets you retry missed questions; progress and scoring are never written to browser storage.
-
-The question order is randomized for the session across all 90 questions. Use **All Questions** to work through the complete randomized list, or **50 Câu / Lượt** to work through it in batches: 50 questions first, then the remaining 40 questions. The batch mode shows progress, a completion summary, and an option to continue to the remaining batch.
+Choose one of the three fixed tests (50, 50, and 35 questions), then start in ascending ID order or random order. Random order shuffles questions within the selected test. Choose **Check Answer** to see the result and explanation. **Review Wrong Questions** lets you retry missed questions from all tests. Switching tests or question order keeps your answers for the current page session.

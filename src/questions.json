@@ -1267,26 +1267,6 @@
     "topic": "Topic 2"
   },
   {
-    "id": null,
-    "question": "Solution: You create a PowerShell script that runs the New-MgUser cmdlet for each user.\nDoes this meet the goal?",
-    "questionType": "single",
-    "options": [
-      {
-        "id": "A",
-        "text": "Yes"
-      },
-      {
-        "id": "B",
-        "text": "No"
-      }
-    ],
-    "correctAnswers": [
-      "B"
-    ],
-    "explanation": "The New-MgUser cmdlet is used to create *new* user accounts directly within the Azure AD tenant, typically for internal users. It does not facilitate inviting external users as guest accounts. To invite external users, the New-MgInvitation (Microsoft Graph PowerShell) or New-AzureADMSInvitation (Azure AD PowerShell) cmdlets are required.",
-    "topic": "Topic None"
-  },
-  {
     "id": 107,
     "question": "You have a Microsoft Entra tenant.\nYou plan to perform a bulk import of users.\nYou need to ensure that imported user objects are added automatically as the members of a specific group based on each user's department. The solution must minimize administrative effort.\nWhich two actions should you perform? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.",
     "questionType": "multiple",
@@ -2470,5 +2450,1176 @@
     ],
     "explanation": "Enabling hierarchical namespace (E) is required to support Azure Data Lake Storage Gen2 capabilities. The Cool access tier (B) minimizes costs for infrequently accessed data by offering lower storage prices. Geo-redundant storage (GRS) (C) automatically replicates data to a secondary Azure region, ensuring disaster recovery.",
     "topic": "Topic 3"
+  },
+  {
+    "id": 203,
+    "question": "Solution: You assign the Storage Account Key Operator Service Role to User1.\n\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "The Storage Account Key Operator Service Role grants permissions specifically to list and regenerate storage account access keys. Assigning this role to User1 directly enables them to perform both required actions for storage1. Therefore, this solution meets the stated goal.\nShared scenario missing from source; cannot verify the full goal.",
+    "topic": "Topic 3",
+    "answerNeedsReview": true
+  },
+  {
+    "id": 211,
+    "question": "Solution: You assign the Reader and Data Access role to User1.\n\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "No, assigning the Reader and Data Access role to User1 does not meet the goal.\nThe Reader role allows viewing resources but lacks permissions to regenerate keys. The Data Access role primarily grants access to data operations, not management of the storage account keys.\nTo list and regenerate storage account keys, User1 requires the 'Storage Account Key Operator Service Role'.\nShared scenario missing from source; cannot verify the full goal.",
+    "topic": "Topic 3",
+    "answerNeedsReview": true
+  },
+  {
+    "id": 212,
+    "question": "You have an Azure subscription that contains a Standard SKU Azure container registry named ContReg1.\n\nYou need to ensure that ContReg1 supports geo-replication.\n\nWhat should you do first for ContReg1?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Enable Admin user."
+      },
+      {
+        "id": "B",
+        "text": "Add a scope map."
+      },
+      {
+        "id": "C",
+        "text": "Add an automation task."
+      },
+      {
+        "id": "D",
+        "text": "Create a cache rule."
+      },
+      {
+        "id": "E",
+        "text": "Upgrade the SKU."
+      }
+    ],
+    "correctAnswers": [
+      "E"
+    ],
+    "explanation": "Geo-replication is a feature exclusive to the Premium SKU of Azure Container Registry.\nThe existing registry is currently a Standard SKU, which does not support geo-replication.\nTherefore, the first step to enable geo-replication is to upgrade the container registry's SKU to Premium.",
+    "topic": "Topic 3"
+  },
+  {
+    "id": 214,
+    "question": "You need to configure encryption for the virtual machines. The solution must meet the technical requirements.\n\nWhich virtual machines can you encrypt?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "VM1 and VM3"
+      },
+      {
+        "id": "B",
+        "text": "VM4 and VM5"
+      },
+      {
+        "id": "C",
+        "text": "VM2 and VM3"
+      },
+      {
+        "id": "D",
+        "text": "VM2 and VM4"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "explanation": "Azure Disk Encryption (ADE) supports VM2 (Windows Server 2022 with a basic OS disk) and VM3 (RHEL 8.4 with a standard SSD OS disk).\nADE does not support VM1 due to its ephemeral OS disk, nor VM4 (M-series with Write Accelerator disks), nor VM5 due to its dynamic volume, based on Microsoft's documentation.\nReferenced case study or table is missing from source.",
+    "topic": "Topic 3",
+    "answerNeedsReview": true
+  },
+  {
+    "id": 215,
+    "question": "You need to implement the planned changes for the storage account content.\n\nWhich containers and file shares can you use to organize the content?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "share1 only"
+      },
+      {
+        "id": "B",
+        "text": "cont1 and share1 only"
+      },
+      {
+        "id": "C",
+        "text": "share1 and share2 only"
+      },
+      {
+        "id": "D",
+        "text": "cont1, share1, and share2 only"
+      },
+      {
+        "id": "E",
+        "text": "cont1, cont2, share1, and share2"
+      }
+    ],
+    "correctAnswers": [
+      "D"
+    ],
+    "explanation": "Referenced case study or table is missing from source.",
+    "topic": "Topic 3",
+    "answerNeedsReview": true
+  },
+  {
+    "id": 216,
+    "question": "You deploy an Azure Kubernetes Service (AKS) cluster named AKS1.\nYou need to deploy a YAML file to AKS1.\n\nSolution: From Azure CLI, you run az aks.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "Running `az aks` commands in Azure CLI manages the Azure Kubernetes Service cluster itself, such as creating, scaling, or deleting it.\nDeploying a YAML file to an AKS cluster, which means interacting with resources inside the Kubernetes cluster, requires the `kubectl` command-line tool.\nSpecifically, `kubectl apply -f .yaml` is used to apply configuration defined in a YAML file.\nTherefore, simply running `az aks` does not meet the goal of deploying a YAML file.\nModern az aks command invoke can run kubectl; the bare az aks command does not deploy a manifest.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 217,
+    "question": "You deploy an Azure Kubernetes Service (AKS) cluster named AKS1.\nYou need to deploy a YAML file to AKS1.\n\nSolution: From Azure CLI, you run the kubectl client.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "Yes. The `kubectl` client is the primary command-line tool for managing Kubernetes clusters, including Azure Kubernetes Service (AKS).\nDeploying a YAML file to an AKS cluster is accomplished using the `kubectl apply -f ` command.\nThis client can be executed directly from an Azure CLI environment after configuring cluster access.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 218,
+    "question": "You deploy an Azure Kubernetes Service (AKS) cluster named AKS1.\nYou need to deploy a YAML file to AKS1.\n\nSolution: From Azure CLI, you run azcopy.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "The `azcopy` utility is used for copying data to and from Azure Storage, not for deploying applications.\nTo deploy a YAML file to an Azure Kubernetes Service (AKS) cluster, the `kubectl` command-line tool is required.\nSpecifically, `kubectl apply -f ` interacts with the Kubernetes API to deploy resources defined in a YAML file.\nTherefore, running `azcopy` does not meet the goal.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 219,
+    "question": "You have an Azure virtual machine named VM1 that runs Windows Server 2016.\nYou need to create an alert in Azure when more than two error events are logged to the System event log on VM1 within an hour.\n\nSolution: You create an Azure storage account and configure shared access signatures (SASs). You install the Microsoft Monitoring Agent on VM1. You create an alert in Azure Monitor and specify the storage account as the source.\nDoes that meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "The provided solution does not meet the goal. Azure Monitor alerts for event logs require a Log Analytics workspace to collect and query the log data.\nSpecifying an Azure storage account as the source for the alert is not the correct mechanism for monitoring System event logs from a virtual machine.\nThe Microsoft Monitoring Agent (MMA) sends logs to a Log Analytics workspace, which is then used by Azure Monitor for querying and creating alerts based on collected event data.\nMMA is retired; storage account is not the appropriate log alert source.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 221,
+    "question": "You download an Azure Resource Manager template based on an existing virtual machine. The template will be used to deploy 100 virtual machines.\nYou need to modify the template to reference an administrative password. You must prevent the password from being stored in plain text.\nWhat should you create to store the password?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "an Azure Key Vault and an access policy"
+      },
+      {
+        "id": "B",
+        "text": "an Azure Storage account and an access policy"
+      },
+      {
+        "id": "C",
+        "text": "a Recovery Services vault and a backup policy"
+      },
+      {
+        "id": "D",
+        "text": "Azure Active Directory (AD) Identity Protection and an Azure policy"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "Azure Key Vault is the dedicated service for securely storing and managing secrets like administrative passwords. By referencing a secret stored in Key Vault, an Azure Resource Manager template can retrieve the password during deployment without it ever being present in plain text within the template or parameter files.\nAn access policy is required on the Key Vault to grant the Azure Resource Manager deployment sufficient permissions to read the specified secret.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 224,
+    "question": "You plan to automate the deployment of a virtual machine scale set that uses the Windows Server 2016 Datacenter image.\nYou need to ensure that when the scale set virtual machines are provisioned, they have web server components installed.\nWhich two actions should you perform? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.",
+    "questionType": "multiple",
+    "options": [
+      {
+        "id": "A",
+        "text": "Upload a configuration script"
+      },
+      {
+        "id": "B",
+        "text": "Create an automation account"
+      },
+      {
+        "id": "C",
+        "text": "Create an Azure policy"
+      },
+      {
+        "id": "D",
+        "text": "Modify the extensionProfile section of the Azure Resource Manager template"
+      },
+      {
+        "id": "E",
+        "text": "Create a new virtual machine scale set in the Azure portal"
+      }
+    ],
+    "correctAnswers": [
+      "A",
+      "D"
+    ],
+    "explanation": "To automate the installation of web server components during VMSS provisioning, you must use the Custom Script Extension.\nUploading a configuration script (A) provides the necessary instructions for installing the web server components.\nModifying the `extensionProfile` section of the Azure Resource Manager template (D) is where you define the Custom Script Extension to execute this configuration script on each VM instance as it is provisioned.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 228,
+    "question": "You create an App Service plan named Plan1 and an Azure web app named webapp1.\nYou discover that the option to create a staging slot is unavailable.\nYou need to create a staging slot for Plan1.\nWhat should you do first?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "From Plan1, scale up the App Service plan"
+      },
+      {
+        "id": "B",
+        "text": "From webapp1, modify the Application settings"
+      },
+      {
+        "id": "C",
+        "text": "From webapp1, add a custom domain"
+      },
+      {
+        "id": "D",
+        "text": "From Plan1, scale out the App Service plan"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "To create staging slots for an Azure web app, the underlying App Service plan must be in the Standard, Premium, or Isolated pricing tier.\nIf staging slots are unavailable, it indicates the current plan is in a lower tier (e.g., Free, Basic).\n\"Scaling up\" an App Service plan involves changing its pricing tier to access more features, including deployment slots.\n\"Scaling out\" increases the number of instances within the current tier, which does not enable new features like staging slots.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 229,
+    "question": "You plan to move a distributed on-premises app named App1 to an Azure subscription.\nAfter the planned move, App1 will be hosted on several Azure virtual machines.\nYou need to ensure that App1 always runs on at least eight virtual machines during planned Azure maintenance.\nWhat should you create?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "one virtual machine scale set that has 10 virtual machines instances"
+      },
+      {
+        "id": "B",
+        "text": "one Availability Set that has three fault domains and one update domain"
+      },
+      {
+        "id": "C",
+        "text": "one Availability Set that has 10 update domains and one fault domain"
+      },
+      {
+        "id": "D",
+        "text": "one virtual machine scale set that has 12 virtual machines instances"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "A Virtual Machine Scale Set (VMSS) with 10 instances, by default, distributes VMs across five update domains. During planned Azure maintenance, only one update domain is updated at a time. This configuration ensures two VMs are down for maintenance, leaving eight VMs active and available, meeting the requirement.\nBoth 10 and 12 instances may satisfy the stated minimum under the assumed update-domain distribution.",
+    "topic": "Topic 4",
+    "answerNeedsReview": true
+  },
+  {
+    "id": 230,
+    "question": "You have an Azure virtual machine named VM1 that runs Windows Server 2016.\nYou need to create an alert in Azure when more than two error events are logged to the System event log on VM1 within an hour.\n\nSolution: You create an event subscription on VM1. You create an alert in Azure Monitor and specify VM1 as the source\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "The proposed solution fails because it does not integrate with Azure Log Analytics. To create an alert based on specific Windows System event log entries, event logs must first be collected into an Azure Log Analytics workspace via the Azure Monitor Agent.\nAn alert rule in Azure Monitor would then query this Log Analytics workspace, not the VM directly, to count the specified error events within the defined timeframe.\nA local event subscription alone does not establish Azure log collection.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 231,
+    "question": "You have an Azure virtual machine named VM1. VM1 was deployed by using a custom Azure Resource Manager template named ARM1.json.\nYou receive a notification that VM1 will be affected by maintenance.\nYou need to move VM1 to a different host immediately.\n\nSolution: From the Overview blade, you move the virtual machine to a different subscription.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "Moving an Azure virtual machine to a different subscription primarily affects billing and resource management within Azure. This action does not reallocate the VM to a different physical host. Therefore, moving the VM to a new subscription does not achieve the goal of immediately moving it to a different host to avoid maintenance.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 232,
+    "question": "You have an Azure virtual machine named VM1. VM1 was deployed by using a custom Azure Resource Manager template named ARM1.json.\nYou receive a notification that VM1 will be affected by maintenance.\nYou need to move VM1 to a different host immediately.\n\nSolution: From the Redeploy blade, you click Redeploy.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "The \"Redeploy\" action in Azure migrates a virtual machine to a new host within the Azure infrastructure. This process involves shutting down, moving, and restarting the VM, which effectively moves VM1 to a different host. This operation retains all VM configurations and associated resources, fulfilling the goal of moving the VM due to maintenance. Temporary disk data can be lost during redeployment.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 233,
+    "question": "You have an Azure virtual machine named VM1. VM1 was deployed by using a custom Azure Resource Manager template named ARM1.json.\nYou receive a notification that VM1 will be affected by maintenance.\nYou need to move VM1 to a different host immediately.\n\nSolution: From the Update management blade, you click Enable.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "Enabling functionality within the Update management blade configures patching and update compliance for a virtual machine's operating system, not its underlying physical host. To move an Azure virtual machine to a different host immediately, the 'Redeploy' action is required, which re-creates the VM on new underlying hardware within the same region.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 234,
+    "question": "You have an Azure subscription that contains a web app named webapp1.\nYou need to add a custom domain named www.contoso.com to webapp1.\nWhat should you do first?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create a DNS record"
+      },
+      {
+        "id": "B",
+        "text": "Add a connection string"
+      },
+      {
+        "id": "C",
+        "text": "Upload a certificate."
+      },
+      {
+        "id": "D",
+        "text": "Stop webapp1."
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "To add a custom domain like www.contoso.com to an Azure web app, the initial step is to create a corresponding DNS record in your domain's DNS zone. For a subdomain, a CNAME record is typically used to point the custom domain name to the Azure web app's default hostname (e.g., yourwebapp.azurewebsites.net).\nThis DNS record establishes the necessary mapping, allowing Azure to verify domain ownership and route traffic correctly to the web app.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 241,
+    "question": "You have a deployment template named Template1 that is used to deploy 10 Azure web apps.\nYou need to identify what to deploy before you deploy Template1. The solution must minimize Azure costs.\nWhat should you identify?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "five Azure Application Gateways"
+      },
+      {
+        "id": "B",
+        "text": "one App Service plan"
+      },
+      {
+        "id": "C",
+        "text": "10 App Service plans"
+      },
+      {
+        "id": "D",
+        "text": "one Azure Traffic Manager"
+      },
+      {
+        "id": "E",
+        "text": "one Azure Application Gateway"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "A single Azure App Service plan can host multiple web applications, sharing its underlying compute resources. This design minimizes Azure costs by avoiding the need for dedicated compute resources for each web app.\nDeploying 10 web apps onto one App Service plan is the most cost-effective solution, provided they do not require strict isolation or significantly different resource allocations.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 243,
+    "question": "You have an Azure subscription that contains a virtual machine named VM1. VM1 hosts a line-of-business application that is available 24 hours a day. VM1 has one network interface and one managed disk. VM1 uses the D4s v3 size.\nYou plan to make the following changes to VM1:\n✑ Change the size to D8s v3.\n✑ Add a 500-GB managed disk.\n✑ Add the Puppet Agent extension.\n✑ Enable Desired State Configuration Management.\nWhich change will cause downtime for VM1?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Enable Desired State Configuration Management"
+      },
+      {
+        "id": "B",
+        "text": "Add a 500-GB managed disk"
+      },
+      {
+        "id": "C",
+        "text": "Change the size to D8s v3"
+      },
+      {
+        "id": "D",
+        "text": "Add the Puppet Agent extension"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "explanation": "Changing an Azure VM's size, such as from D4s v3 to D8s v3, often requires the VM to be deallocated and then reallocated on different underlying hardware. This operation necessitates a restart of the virtual machine. This restart causes downtime for the hosted application.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 244,
+    "question": "You have an app named App1 that runs on an Azure web app named webapp1.\nThe developers at your company upload an update of App1 to a Git repository named Git1.\nWebapp1 has the deployment slots shown in the following table.\n\nYou need to ensure that the App1 update is tested before the update is made available to users.\nWhich two actions should you perform? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.",
+    "questionType": "multiple",
+    "options": [
+      {
+        "id": "A",
+        "text": "Swap the slots"
+      },
+      {
+        "id": "B",
+        "text": "Deploy the App1 update to webapp1-prod, and then test the update"
+      },
+      {
+        "id": "C",
+        "text": "Stop webapp1-prod"
+      },
+      {
+        "id": "D",
+        "text": "Deploy the App1 update to webapp1-test, and then test the update"
+      },
+      {
+        "id": "E",
+        "text": "Stop webapp1-test"
+      }
+    ],
+    "correctAnswers": [
+      "A",
+      "D"
+    ],
+    "explanation": "To ensure the update is tested before being available to users, the App1 update must first be deployed to webapp1-test, which is the designated staging environment for isolated testing. After successful testing in the staging slot, a slot swap operation between webapp1-test and webapp1-prod will promote the updated application to production with minimal downtime, making it available to users.\nThe referenced deployment-slot table is absent; the answer assumes the slot names indicate their intended roles.",
+    "topic": "Topic 4",
+    "answerNeedsReview": true
+  },
+  {
+    "id": 245,
+    "question": "You have an Azure subscription named Subscription1 that has the following providers registered:\n✑ Authorization\n✑ Automation\n✑ Resources\n✑ Compute\n✑ KeyVault\n✑ Network\n✑ Storage\n✑ Billing\n✑ Web\nSubscription1 contains an Azure virtual machine named VM1 that has the following configurations:\n✑ Private IP address: 10.0.0.4 (dynamic)\n✑ Network security group (NSG): NSG1\n✑ Public IP address: None\n✑ Availability set: AVSet\n✑ Subnet: 10.0.0.0/24\n✑ Managed disks: No\n✑ Location: East US\nYou need to record all the successful and failed connection attempts to VM1.\nWhich three actions should you perform? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.",
+    "questionType": "multiple",
+    "options": [
+      {
+        "id": "A",
+        "text": "Enable Azure Network Watcher in the East US Azure region."
+      },
+      {
+        "id": "B",
+        "text": "Add an Azure Network Watcher connection monitor."
+      },
+      {
+        "id": "C",
+        "text": "Register the MicrosoftLogAnalytics provider."
+      },
+      {
+        "id": "D",
+        "text": "Create an Azure Storage account."
+      },
+      {
+        "id": "E",
+        "text": "Register the Microsoft.Insights resource provider."
+      },
+      {
+        "id": "F",
+        "text": "Enable Azure Network Watcher flow logs."
+      }
+    ],
+    "correctAnswers": [
+      "D",
+      "E",
+      "F"
+    ],
+    "explanation": "Recording successful and failed connection attempts to an Azure VM requires enabling NSG Flow Logs, a feature of Azure Network Watcher.\n1. **Create an Azure Storage account (D):** NSG flow log data is written to an Azure Storage account.\n2. **Register the Microsoft.Insights resource provider (E):** This provider must be registered in the subscription for NSG flow logs to function.\n3. **Enable Azure Network Watcher flow logs (F):** This action configures the NSG associated with VM1 to record IP traffic flows. Network Watcher itself is typically enabled automatically per region when a virtual network is created.\nNSG flow logs are legacy; new NSG flow logs cannot be created after June 2025. VNet flow logs are the replacement.",
+    "topic": "Topic 4",
+    "answerNeedsReview": true
+  },
+  {
+    "id": 246,
+    "question": "You need to deploy an Azure virtual machine scale set that contains five instances as quickly as possible.\nWhat should you do?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Deploy five virtual machines. Modify the Availability Zones settings for each virtual machine."
+      },
+      {
+        "id": "B",
+        "text": "Deploy five virtual machines. Modify the Size setting for each virtual machine."
+      },
+      {
+        "id": "C",
+        "text": "Deploy one virtual machine scale set that is set to VM (virtual machines) orchestration mode."
+      },
+      {
+        "id": "D",
+        "text": "Deploy one virtual machine scale set that is set to ScaleSetVM orchestration mode."
+      }
+    ],
+    "correctAnswers": [
+      "D"
+    ],
+    "explanation": "To deploy five identical virtual machine instances as quickly as possible within a scale set, the ScaleSetVM orchestration mode (now known as Uniform orchestration) is required. This mode defines a virtual machine model, allowing Azure to automatically create and manage multiple instances based on that single configuration.\n\nIn contrast, VM orchestration mode (Flexible orchestration) creates an empty scale set, requiring manual addition of individual virtual machines, which is not the quickest method for deploying multiple new instances.\nFlexible orchestration can also provision multiple instances from a scale set profile.",
+    "topic": "Topic 4",
+    "answerNeedsReview": true
+  },
+  {
+    "id": 249,
+    "question": "You have an Azure subscription named Subscription1. Subscription1 contains a resource group named RG1. RG1 contains resources that were deployed by using templates.\nYou need to view the date and time when the resources were created in RG1.\n\nSolution: From the Subscriptions blade, you select the subscription, and then click Programmatic deployment.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "The proposed solution does not meet the goal.\nNavigating to \"Programmatic deployment\" from the Subscriptions blade manages settings for deploying resources programmatically, not viewing past deployment history for a specific resource group.\nTo view the creation date and time of resources deployed via templates in RG1, one must navigate to the RG1 resource group blade and inspect its 'Deployments' section.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 250,
+    "question": "You have an Azure subscription that contains the resources shown in the following table.\n\nVM1 connects to VNET1.\nYou need to connect VM1 to VNET2.\nSolution: You create a new network interface, and then you add the network interface to VM1.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "Azure Virtual Machines are fundamentally associated with a single Virtual Network (VNet) upon creation. It is not possible to change a VM's VNet association directly after deployment, nor can a VM have network interfaces connected to multiple distinct VNets. To connect VM1 to VNET2, VM1 would need to be deleted and then recreated within VNET2 with a new network interface.\nReferenced case study or table is missing from source.",
+    "topic": "Topic 4",
+    "answerNeedsReview": true
+  },
+  {
+    "id": 257,
+    "question": "You create the following resources in an Azure subscription:\n✑ An Azure Container Registry instance named Registry1\n✑ An Azure Kubernetes Service (AKS) cluster named Cluster1\nYou create a container image named App1 on your administrative workstation.\nYou need to deploy App1 to Cluster1.\nWhat should you do first?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Run the docker push command."
+      },
+      {
+        "id": "B",
+        "text": "Create an App Service plan."
+      },
+      {
+        "id": "C",
+        "text": "Run the az acr build command."
+      },
+      {
+        "id": "D",
+        "text": "Run the az aks create command."
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "The question states the container image App1 is already created on the administrative workstation. To deploy this locally built image to an Azure Kubernetes Service (AKS) cluster, it must first be uploaded to a container registry accessible by AKS.\nRunning the `docker push` command is the direct action to upload an already-built and tagged Docker image from a local machine to a remote registry like Azure Container Registry (Registry1).\n`az acr build` is used to build an image in ACR, which is redundant as the image is already built locally. Options B and D are irrelevant as an App Service plan is not used for AKS deployments, and the AKS cluster already exists.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 259,
+    "question": "You have an Azure subscription named Subscription1. Subscription1 contains a resource group named RG1. RG1 contains resources that were deployed by using templates.\nYou need to view the date and time when the resources were created in RG1.\n\nSolution: From the Subscriptions blade, you select the subscription, and then click Resource providers.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "The proposed solution navigates to \"Resource providers\" under the subscription. This blade shows the registration status of Azure services within the subscription, not the deployment history or creation dates of resources.\nTo view the date and time resources were created via templates within RG1, one must access the \"Deployments\" blade directly within the RG1 resource group.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 260,
+    "question": "You have an Azure subscription named Subscription1. Subscription1 contains a resource group named RG1. RG1 contains resources that were deployed by using templates.\nYou need to view the date and time when the resources were created in RG1.\n\nSolution: From the RG1 blade, you click Automation script.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "Clicking \"Automation script\" on an Azure resource group blade exports an Azure Resource Manager (ARM) template of the existing resources; it does not display creation dates or deployment history.\nTo view the date and time when resources were created via templates within a resource group, you must access the \"Deployments\" blade for that resource group.\nTherefore, the proposed solution does not meet the goal.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 261,
+    "question": "You have an Azure subscription named Subscription1. Subscription1 contains a resource group named RG1. RG1 contains resources that were deployed by using templates.\nYou need to view the date and time when the resources were created in RG1.\n\nSolution: From the RG1 blade, you click Deployments.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "Clicking \"Deployments\" from the resource group (RG1) blade displays a chronological history of all template deployments within that resource group.\nEach deployment entry in this view includes details such as the deployment name, status, and critically, the exact date and time it was initiated and completed.\nSince the resources in RG1 were deployed using templates, this deployment history directly indicates when those resources were created.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 262,
+    "question": "You have an Azure subscription named Subscription1.\nYou deploy a Linux virtual machine named VM1 to Subscription1.\nYou need to monitor the metrics and the logs of VM1.\nWhat should you use?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure HDInsight"
+      },
+      {
+        "id": "B",
+        "text": "Linux Diagnostic Extension (LAD) 3.0"
+      },
+      {
+        "id": "C",
+        "text": "the AzurePerformanceDiagnostics extension"
+      },
+      {
+        "id": "D",
+        "text": "Azure Analysis Services"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "The Linux Diagnostic Extension (LAD) is specifically designed to collect monitoring data, including performance metrics and logs, from Linux virtual machines in Azure. It enables comprehensive health and performance monitoring for Linux VMs. Options A, C, and D are either for Windows VMs (AzurePerformanceDiagnostics) or entirely different Azure services unrelated to direct Linux VM metric and log collection.\nLAD is legacy; Azure Monitor Agent is the modern replacement.",
+    "topic": "Topic 4",
+    "answerNeedsReview": true
+  },
+  {
+    "id": 264,
+    "question": "You plan to deploy three Azure virtual machines named VM1, VM2, and VM3. The virtual machines will host a web app named App1.\nYou need to ensure that at least two virtual machines are available if a single Azure datacenter becomes unavailable.\nWhat should you deploy?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "all three virtual machines in a single Availability Zone"
+      },
+      {
+        "id": "B",
+        "text": "all virtual machines in a single Availability Set"
+      },
+      {
+        "id": "C",
+        "text": "each virtual machine in a separate Availability Zone"
+      },
+      {
+        "id": "D",
+        "text": "each virtual machine in a separate Availability Set"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "explanation": "To ensure at least two virtual machines remain available if a single Azure datacenter becomes unavailable, you must deploy each virtual machine into a separate Availability Zone. Availability Zones provide physical separation of datacenters within an Azure region, each with independent power, cooling, and networking. This design isolates failures, so an outage in one zone will not affect VMs in other zones.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 265,
+    "question": "You have an Azure virtual machine named VM1 that runs Windows Server 2019.\nYou save VM1 as a template named Template1 to the Azure Resource Manager library.\nYou plan to deploy a virtual machine named VM2 from Template1.\nWhat can you configure during the deployment of VM2?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "operating system"
+      },
+      {
+        "id": "B",
+        "text": "administrator username"
+      },
+      {
+        "id": "C",
+        "text": "virtual machine size"
+      },
+      {
+        "id": "D",
+        "text": "resource group"
+      }
+    ],
+    "correctAnswers": [
+      "D"
+    ],
+    "explanation": "A Resource Group is a logical container for Azure resources, and an Azure Resource Manager (ARM) template defines the resources to be deployed *into* a resource group, not the resource group itself.\nTherefore, when deploying a virtual machine from a template, you must specify an existing or new resource group to contain the deployed VM2. Options such as operating system, administrator username, and virtual machine size can typically be predefined or parameterized within the ARM template.\nOther properties can be configurable if parameterized in the template.",
+    "topic": "Topic 4",
+    "answerNeedsReview": true
+  },
+  {
+    "id": 266,
+    "question": "You have an Azure subscription that contains an Azure virtual machine named VM1. VM1 runs a financial reporting app named App1 that does not support multiple active instances.\nAt the end of each month, CPU usage for VM1 peaks when App1 runs.\nYou need to create a scheduled runbook to increase the processor performance of VM1 at the end of each month.\nWhat task should you include in the runbook?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Add the Azure Performance Diagnostics agent to VM1."
+      },
+      {
+        "id": "B",
+        "text": "Modify the VM size property of VM1."
+      },
+      {
+        "id": "C",
+        "text": "Add VM1 to a scale set."
+      },
+      {
+        "id": "D",
+        "text": "Increase the vCPU quota for the subscription."
+      },
+      {
+        "id": "E",
+        "text": "Add a Desired State Configuration (DSC) extension to VM1."
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "Modifying the VM size property (vertical scaling) directly increases the allocated vCPUs and memory, enhancing processor performance for VM1. This action can be easily automated within a scheduled runbook using Azure PowerShell cmdlets or Azure CLI commands. Since App1 does not support multiple active instances, horizontal scaling solutions like VM scale sets are not suitable.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 267,
+    "question": "You plan to deploy several Azure virtual machines that will run Windows Server 2019 in a virtual machine scale set by using an Azure Resource Manager template.\nYou need to ensure that NGINX is available on all the virtual machines after they are deployed.\nWhat should you use?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Deployment Center in Azure App Service"
+      },
+      {
+        "id": "B",
+        "text": "A Desired State Configuration (DSC) extension"
+      },
+      {
+        "id": "C",
+        "text": "the New-AzConfigurationAssignment cmdlet"
+      },
+      {
+        "id": "D",
+        "text": "a Microsoft Intune device configuration profile"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "A Desired State Configuration (DSC) extension allows you to define and enforce specific software installations, such as NGINX, across Azure virtual machines. Integrating a DSC extension into an Azure Resource Manager template ensures that this configuration is automatically applied to all VMs upon deployment within a virtual machine scale set. This method provides consistent, automated post-deployment setup for all instances.\nDSC extension is legacy and scheduled for retirement; historical answer is plausible.",
+    "topic": "Topic 4",
+    "answerNeedsReview": true
+  },
+  {
+    "id": 270,
+    "question": "You have an Azure virtual machine named VM1 that runs Windows Server 2019. The VM was deployed using default drive settings.\nYou sign in to VM1 as a user named User1 and perform the following actions:\n✑ Create files on drive C.\n✑ Create files on drive D.\n✑ Modify the screen saver timeout.\n✑ Change the desktop background.\nYou plan to redeploy VM1.\nWhich changes will be lost after you redeploy VM1?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "the modified screen saver timeout"
+      },
+      {
+        "id": "B",
+        "text": "the new desktop background"
+      },
+      {
+        "id": "C",
+        "text": "the new files on drive D"
+      },
+      {
+        "id": "D",
+        "text": "the new files on drive C"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "explanation": "When an Azure VM is redeployed, it is moved to a new host within the Azure infrastructure. The OS disk (C:) and its contents persist, including user profile settings like screen saver timeout and desktop background.\nHowever, the temporary disk (D: on Windows VMs) is recreated on the new host, causing any data stored on it to be permanently lost. Therefore, new files created on drive D will be lost.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 276,
+    "question": "You plan to back up an Azure virtual machine named VM1.\nYou discover that the Backup Pre-Check status displays a status of Warning.\nWhat is a possible cause of the Warning status?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "VM1 is stopped."
+      },
+      {
+        "id": "B",
+        "text": "VM1 does not have the latest version of the Azure VM Agent (WaAppAgent.exe) installed."
+      },
+      {
+        "id": "C",
+        "text": "VM1 has an unmanaged disk."
+      },
+      {
+        "id": "D",
+        "text": "A Recovery Services vault is unavailable."
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "The Backup Pre-Check status displays a Warning when the Azure VM Agent (WaAppAgent.exe) is not the latest version. An outdated VM Agent indicates a configuration issue that can lead to intermittent backup failures.\nReference: Microsoft Docs on Azure Backup Pre-Check statuses.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 277,
+    "question": "You have an Azure virtual machine named VM1. VM1 was deployed by using a custom Azure Resource Manager template named ARM1.json.\nYou receive a notification that VM1 will be affected by maintenance.\nYou need to move VM1 to a different host immediately.\n\nSolution: From the Overview blade, you move the virtual machine to a different resource group.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "Moving an Azure virtual machine to a different resource group is a logical organizational change and does not relocate the VM to a new underlying physical host. To move a virtual machine to a different host within the Azure infrastructure, which is required to avoid impending maintenance, the \"Redeploy\" operation must be performed. Therefore, this action does not meet the stated goal.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 279,
+    "question": "You have an Azure virtual machine named VM1 that runs Windows Server 2016.\nYou need to create an alert in Azure when more than two error events are logged to the System event log on VM1 within an hour.\n\nSolution: You create an Azure Log Analytics workspace and configure the Agent configuration settings. You install the Microsoft Monitoring Agent on VM1. You create an alert in Azure Monitor and specify the Log Analytics workspace as the source.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "Yes, this solution meets the goal. The Azure Log Analytics workspace acts as a central repository for collected logs, and configuring agent settings ensures the correct Windows event logs are ingested.\nInstalling the Microsoft Monitoring Agent (Log Analytics agent) on VM1 enables it to collect and forward system event logs to the workspace.\nAzure Monitor can then be configured with an alert rule that queries the Log Analytics workspace for more than two error events from VM1's System log within an hour, fulfilling the requirement.\nMMA is retired; historical solution is plausible.",
+    "topic": "Topic 4",
+    "answerNeedsReview": true
+  },
+  {
+    "id": 284,
+    "question": "You deploy an Azure Kubernetes Service (AKS) cluster named AKS1.\nYou need to deploy a YAML file to AKS1.\n\nSolution: From Azure Cloud Shell, you run az aks.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "Running `az aks` is used for managing Azure Kubernetes Service (AKS) clusters themselves, such as creating or scaling.\nTo deploy a YAML manifest file to an AKS cluster, the `kubectl` command-line tool is required, typically using `kubectl apply -f `.\nTherefore, the proposed solution does not meet the goal of deploying a YAML file.\nModern az aks command invoke can run kubectl; the bare az aks command does not deploy a manifest.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 285,
+    "question": "You have an Azure virtual machine named VM1 that runs Windows Server 2016.\nYou need to create an alert in Azure when more than two error events are logged to the System event log on VM1 within an hour.\n\nSolution: You create an Azure Log Analytics workspace and configure the data settings. You add the Microsoft Monitoring Agent VM extension to VM1. You create an alert in Azure Monitor and specify the Log Analytics workspace as the source.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "The historical MMA VM extension can collect configured Windows event logs, so the source No appears inconsistent. MMA is now retired; version matters.",
+    "topic": "Topic 4",
+    "answerNeedsReview": true
+  },
+  {
+    "id": 286,
+    "question": "You have an Azure virtual machine named VM1 that runs Windows Server 2016.\nYou need to create an alert in Azure when more than two error events are logged to the System event log on VM1 within an hour.\n\nSolution: You create an Azure Log Analytics workspace and configure the data settings. You install the Microsoft Monitoring Agent on VM1. You create an alert in\nAzure Monitor and specify the Log Analytics workspace as the source.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "Installing the Microsoft Monitoring Agent (MMA) on VM1 enables it to collect event logs from the Windows System event log and forward them to the configured Azure Log Analytics workspace. The Log Analytics workspace serves as the centralized repository for these logs. Azure Monitor can then create an alert rule that queries the workspace for the specified error event count within an hour, thus meeting the goal.\nMMA is retired; historical solution is plausible.",
+    "topic": "Topic 4",
+    "answerNeedsReview": true
+  },
+  {
+    "id": 294,
+    "question": "You plan to deploy several Azure virtual machines that will run Windows Server 2019 in a virtual machine scale set by using an Azure Resource Manager template.\nYou need to ensure that NGINX is available on all the virtual machines after they are deployed.\nWhat should you use?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "the Publish-AzVMDscConfiguration cmdlet"
+      },
+      {
+        "id": "B",
+        "text": "Azure Application Insights"
+      },
+      {
+        "id": "C",
+        "text": "Azure Custom Script Extension"
+      },
+      {
+        "id": "D",
+        "text": "a Microsoft Endpoint Manager device configuration profile"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "explanation": "The Azure Custom Script Extension is specifically designed for post-deployment configuration and software installation on Azure virtual machines, including those in a virtual machine scale set.\nIt enables you to download and execute scripts (e.g., PowerShell for Windows) to install applications like NGINX after the VMs are provisioned.\nThis extension can be seamlessly integrated into an Azure Resource Manager template for automated deployment and configuration.",
+    "topic": "Topic 4"
+  },
+  {
+    "id": 296,
+    "question": "You have an Azure subscription that contains three virtual machines named VM1, VM2, and VM3. All the virtual machines are in an availability set named AVSet1.\n\nYou need to scale up VM1 to a new virtual machine size, but the intended size is unavailable.\n\nWhat should you do first?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create a proximity placement group."
+      },
+      {
+        "id": "B",
+        "text": "Deallocate VM1."
+      },
+      {
+        "id": "C",
+        "text": "Convert AvSet1 into a managed availability set."
+      },
+      {
+        "id": "D",
+        "text": "Shut down VM3 and VM3."
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "When a desired virtual machine size is unavailable, it indicates that the current hardware cluster hosting the VM does not support that size. Deallocating VM1 releases its current hardware assignment and frees up the resources.\nThis action allows Azure to provision the VM on a different underlying hardware cluster that possesses the necessary capacity and support for the new size, enabling the resize operation.\nIf the target size is unavailable on the availability-set hardware cluster, all VMs in the availability set may need to be deallocated. Option D contains an ambiguous repeated VM name.",
+    "topic": "Topic 4",
+    "answerNeedsReview": true
+  },
+  {
+    "id": 300,
+    "question": "You have an Azure container registry named Registry1 that contains an image named image1.\n\nYou receive an error message when you attempt to deploy a container instance by using image1.\n\nYou need to be able to deploy a container instance by using image1.\n\nSolution: You set Admin user to Enable for Registry1.\n\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "explanation": "Enabling the Azure Container Registry (ACR) admin user provides an explicit set of credentials for authenticating image pulls. Deployment failures from a private registry, such as an ACR, are frequently caused by insufficient authentication or authorization for the image pull operation.\nBy enabling the admin user, the most common hurdle for successful container instance deployment from a private registry, which is authentication, is resolved.\nThe error message is not supplied; enabling admin credentials only helps if authentication is the cause.",
+    "topic": "Topic 4",
+    "answerNeedsReview": true
+  },
+  {
+    "id": 301,
+    "hasLocalId": true,
+    "question": "Solution: You create a PowerShell script that runs the New-MgUser cmdlet for each user.\nDoes this meet the goal?",
+    "questionType": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "explanation": "The New-MgUser cmdlet is used to create *new* user accounts directly within the Azure AD tenant, typically for internal users. It does not facilitate inviting external users as guest accounts. To invite external users, the New-MgInvitation (Microsoft Graph PowerShell) or New-AzureADMSInvitation (Azure AD PowerShell) cmdlets are required."
+  },
+  {
+    "id": 302,
+    "hasLocalId": true,
+    "question": "You have an Azure Kubernetes Service (AKS) cluster named AKS1.\nYou need to configure cluster autoscaler for AKS1.\nWhich two tools should you use? Each correct answer presents a complete solution.\nNOTE: Each correct selection is worth one point.",
+    "questionType": "multiple",
+    "options": [
+      {
+        "id": "A",
+        "text": "the kubectl command"
+      },
+      {
+        "id": "B",
+        "text": "the az aks command"
+      },
+      {
+        "id": "C",
+        "text": "the Set-AzVm cmdlet"
+      },
+      {
+        "id": "D",
+        "text": "the Azure portal"
+      },
+      {
+        "id": "E",
+        "text": "the Set-AzAks cmdlet"
+      }
+    ],
+    "correctAnswers": [
+      "B",
+      "D"
+    ],
+    "explanation": "To configure the cluster autoscaler for an Azure Kubernetes Service (AKS) cluster, you use the `az aks` command in the Azure CLI. This command allows programmatic management of AKS properties, including enabling and adjusting node pool autoscaling settings.\nThe Azure portal provides a direct graphical interface to enable and configure cluster autoscaler settings under the node pool section of your AKS cluster.\nThe `kubectl` command is primarily used for managing Kubernetes resources like pods and deployments, or for horizontal pod autoscaling, not for configuring the underlying AKS cluster's node autoscaler.\nQuestion ID and topic header absent; topic left null because it is not explicitly supplied.",
+    "answerNeedsReview": true
   }
 ]
